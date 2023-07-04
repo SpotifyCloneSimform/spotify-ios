@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.7.1)
+  - Kingfisher (7.8.1)
+  - ReachabilitySwift (5.0.0)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - ReachabilitySwift
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - ReachabilitySwift
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: ce4569017a5c2fde2e2a68421f71847e46fe310b
+
+COCOAPODS: 1.12.1
