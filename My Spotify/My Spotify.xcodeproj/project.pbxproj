@@ -14,6 +14,7 @@
 		230271CD2A541F9A006F09BF /* Dynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271CC2A541F9A006F09BF /* Dynamics.swift */; };
 		230271CF2A542056006F09BF /* APIManager+EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271CE2A542056006F09BF /* APIManager+EndPoints.swift */; };
 		2395AF2E2A5434870003B93B /* APIManager+ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395AF2D2A5434870003B93B /* APIManager+ErrorHandler.swift */; };
+		E84F68422A55937E00430D8A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84F68412A55937E00430D8A /* KeychainHelper.swift */; };
 		E8B376002A53F6BE006107FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B375FF2A53F6BE006107FD /* AppDelegate.swift */; };
 		E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B376012A53F6BE006107FD /* SceneDelegate.swift */; };
 		E8B376042A53F6BE006107FD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B376032A53F6BE006107FD /* HomeVC.swift */; };
@@ -44,6 +45,7 @@
 		27E810A9ED1CA34D23D432E4 /* Pods-My Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spotify.debug.xcconfig"; path = "Target Support Files/Pods-My Spotify/Pods-My Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		511D686C12192AA0A88331D3 /* Pods_My_Spotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Spotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4E78549BF3E08923DAE99E /* Pods-My Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spotify.release.xcconfig"; path = "Target Support Files/Pods-My Spotify/Pods-My Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		E84F68412A55937E00430D8A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		E8B375FC2A53F6BE006107FD /* My Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Spotify.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B375FF2A53F6BE006107FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8B376012A53F6BE006107FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E84F68402A55936400430D8A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E84F68412A55937E00430D8A /* KeychainHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E85DC1D42A54177400EEAF04 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		E8B375FE2A53F6BE006107FD /* My Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				E84F68402A55936400430D8A /* Helpers */,
 				E8D6D4D02A5537AA00D2D965 /* Utils */,
 				E8D6D4CD2A5535AD00D2D965 /* Extentions */,
 				230271CB2A541F88006F09BF /* Dynamics */,
@@ -385,6 +396,7 @@
 				2395AF2E2A5434870003B93B /* APIManager+ErrorHandler.swift in Sources */,
 				230271CF2A542056006F09BF /* APIManager+EndPoints.swift in Sources */,
 				E8D6D4CA2A55336500D2D965 /* AuthCoordinator.swift in Sources */,
+				E84F68422A55937E00430D8A /* KeychainHelper.swift in Sources */,
 				E8B3761B2A53F961006107FD /* AppCoordinator.swift in Sources */,
 				E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */,
 				E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */,

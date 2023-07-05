@@ -47,8 +47,9 @@ class AuthViewModel {
             
             switch result {
             case .success(let response):
-                // TODO: Save response tokens and details
-                break
+                KeychainHelper.shared.accessToken = response.accessToken
+                KeychainHelper.shared.refreshToken = response.refreshToken
+                KeychainHelper.shared.expiryTime = response.expiresIn
             case .failure(let error):
                 self.errorMessage.value = error.localizedDescription
             }
