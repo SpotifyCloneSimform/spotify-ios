@@ -20,7 +20,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        goToAuth()
+        KeychainHelper.shared.accessToken == nil ? goToAuth() : goToHome() 
     }
     
     func goToHome() {
