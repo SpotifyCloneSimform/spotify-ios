@@ -16,29 +16,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-IV-JQa">
-                                <rect key="frame" x="144.66666666666666" y="415.66666666666669" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kbt-Vj-IfX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TVHomeCell" rowHeight="142" id="bau-Xa-qjH" customClass="TVHomeCell" customModule="My_Spotify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bau-Xa-qjH" id="lfc-vQ-gUf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="142"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PJA-zD-XzF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="142"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ROR-IQ-apP">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells/>
+                                                </collectionView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="PJA-zD-XzF" secondAttribute="trailing" id="HEp-rj-Ocr"/>
+                                                <constraint firstAttribute="bottom" secondItem="PJA-zD-XzF" secondAttribute="bottom" id="IBv-d3-9s0"/>
+                                                <constraint firstItem="PJA-zD-XzF" firstAttribute="leading" secondItem="lfc-vQ-gUf" secondAttribute="leading" id="qGm-VU-qk4"/>
+                                                <constraint firstItem="PJA-zD-XzF" firstAttribute="top" secondItem="lfc-vQ-gUf" secondAttribute="top" id="vaW-As-CK6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="clvPlaylist" destination="PJA-zD-XzF" id="PMP-Xw-iHL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="WQJ-Y0-Tu1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gt9-CC-LOf"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
-                            <constraint firstItem="ypz-IV-JQa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeT-pN-y5h"/>
-                            <constraint firstItem="ypz-IV-JQa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oUp-aU-1DZ"/>
+                            <constraint firstItem="kbt-Vj-IfX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="11P-1b-NV1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kbt-Vj-IfX" secondAttribute="bottom" id="9Zw-OA-JMe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kbt-Vj-IfX" secondAttribute="trailing" id="kgz-Dh-r1K"/>
+                            <constraint firstItem="kbt-Vj-IfX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ssN-FQ-eA4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblHome" destination="kbt-Vj-IfX" id="1l5-tx-G6C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="-382" y="-156"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
