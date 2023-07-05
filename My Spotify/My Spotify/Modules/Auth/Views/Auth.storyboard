@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AuthVC" title="Auth" id="Y6W-OH-hqX" customClass="AuthVC" customModule="My_Spotify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbumBackground" translatesAutoresizingMaskIntoConstraints="NO" id="t3Q-S5-6JC" userLabel="Background image">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-VA-o7k">
+                                <rect key="frame" x="16" y="758" width="361" height="44"/>
+                                <color key="backgroundColor" name="DarkGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kjl-ZH-WMp"/>
+                                </constraints>
+                                <color key="tintColor" name="DarkGreen"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign in with Spotify">
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="DarkGreen"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="actionSignIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="AW6-bg-Ogj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spotify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hp-TM-rMV">
+                                <rect key="frame" x="16" y="75" width="92" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listen to music with Spotify" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iw4-JM-ZEd">
+                                <rect key="frame" x="28" y="329" width="337" height="67"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mus-Vh-1CJ" userLabel="Icon">
+                                <rect key="frame" x="136.66666666666666" y="159" width="119.99999999999997" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mus-Vh-1CJ" secondAttribute="height" id="I6E-No-TNp"/>
+                                    <constraint firstAttribute="width" constant="120" id="QNu-vz-dZz"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="mIi-FH-mF6">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t3Q-S5-6JC" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="0Cu-FE-R6I"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2pf-VA-o7k" secondAttribute="trailing" constant="16" id="12z-GQ-la3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iw4-JM-ZEd" secondAttribute="trailing" constant="28" id="56f-mn-JJl"/>
+                            <constraint firstItem="2pf-VA-o7k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="8hL-RU-A9e"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2pf-VA-o7k" secondAttribute="bottom" constant="16" id="9a7-gt-quX"/>
+                            <constraint firstItem="1hp-TM-rMV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="F7d-Kz-tPq"/>
+                            <constraint firstAttribute="trailing" secondItem="t3Q-S5-6JC" secondAttribute="trailing" id="JxO-aP-nqJ"/>
+                            <constraint firstItem="Mus-Vh-1CJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PAh-eg-oBr"/>
+                            <constraint firstItem="mIi-FH-mF6" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ZXF-ut-H4M"/>
+                            <constraint firstAttribute="bottom" secondItem="t3Q-S5-6JC" secondAttribute="bottom" id="c62-29-Ouy"/>
+                            <constraint firstItem="1hp-TM-rMV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="dct-LX-kkO"/>
+                            <constraint firstItem="iw4-JM-ZEd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="deQ-cL-jAU"/>
+                            <constraint firstItem="Mus-Vh-1CJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="iKs-3e-7A9"/>
+                            <constraint firstItem="mIi-FH-mF6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="iWT-4A-cXA"/>
+                            <constraint firstItem="iw4-JM-ZEd" firstAttribute="top" secondItem="Mus-Vh-1CJ" secondAttribute="bottom" constant="50" id="pmy-qf-gGB"/>
+                            <constraint firstItem="t3Q-S5-6JC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="s2x-sA-Qpe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSignIn" destination="2pf-VA-o7k" id="18g-eG-rcD"/>
+                        <outlet property="progressIndicator" destination="mIi-FH-mF6" id="iWt-3E-a7g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.76335877862595414" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AlbumBackground" width="1366" height="768"/>
+        <image name="Icon" width="369.5" height="354.5"/>
+        <namedColor name="AccentColor">
+            <color red="0.11500000208616257" green="0.84299999475479126" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGreen">
+            <color red="0.094117647058823528" green="0.68235294117647061" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

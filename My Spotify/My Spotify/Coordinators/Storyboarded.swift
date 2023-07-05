@@ -8,6 +8,7 @@
 import UIKit
 
 enum Storyboard: String {
+    case auth = "Auth"
     case home = "Home"
 }
 

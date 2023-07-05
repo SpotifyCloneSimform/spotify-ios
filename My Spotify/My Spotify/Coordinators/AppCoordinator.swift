@@ -20,12 +20,18 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        goToHome()
+        goToAuth()
     }
     
     func goToHome() {
         let homeCoordinator = HomeCoordinator(navigationController: navigationController)
         self.window.rootViewController = navigationController
         homeCoordinator.start()
+    }
+    
+    func goToAuth(with code: String? = nil) {
+        let authCoordinator = AuthCoordinator(navigationController: navigationController, with: code)
+        self.window.rootViewController = navigationController
+        authCoordinator.start()
     }
 }
