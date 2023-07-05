@@ -7,31 +7,41 @@
 
 import Foundation
 import Alamofire
+
 enum RequestItemsType: Equatable {
-    
+    case authToken(code: String)
 }
 
 // MARK: Extensions
 // MARK: EndPointType
 
 extension RequestItemsType: EndPointType {
-
-    // MARK: Vars & Lets
     
+    // MARK: Vars & Lets
+
     var baseURL: String {
-        return ""
+        switch self {
+        case .authToken:
+            return AppConstants.baseAuth
+        }
     }
     
     var api: String {
-        return "api/"
+        return AppConstants.api
     }
     
     var version: String {
-        return "v1/"
+        switch self {
+        case .authToken:
+            return ""
+        }
     }
     
     var path: String {
-       return ""
+        switch self {
+        case .authToken:
+            return "token"
+        }
     }
     
     var httpMethod: HTTPMethod {
@@ -39,15 +49,29 @@ extension RequestItemsType: EndPointType {
     }
     
     var headers: HTTPHeaders? {
-       return HTTPHeaders()
+        switch self {
+        case .authToken:
+            if let basicCredential =  "\(AppConstants.clientId):\(AppConstants.clientSecret)".data(using: .utf8)?.base64EncodedString() {
+                return [
+                    "Authorization": "Basic " + basicCredential
+                ]
+            } else {
+                return []
+            }
+        }
     }
     
     var url: URL {
-       return URL(string: "")!
+        return URL(string: self.baseURL + self.api + self.version +  self.path)!
     }
     
     var encoding: ParameterEncoding {
-        return JSONEncoding.default
+        switch self {
+        case .authToken:
+            return URLEncoding.httpBody
+        default:
+            return JSONEncoding.default
+        }
     }
     
 }

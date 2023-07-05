@@ -24,6 +24,14 @@
 		E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B3761C2A53F987006107FD /* Coordinator.swift */; };
 		E8B3761F2A53F9A0006107FD /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B3761E2A53F9A0006107FD /* Storyboarded.swift */; };
 		E8B376212A53FABF006107FD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B376202A53FABF006107FD /* HomeCoordinator.swift */; };
+		E8D6D4C62A55284300D2D965 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D6D4C52A55284300D2D965 /* Auth.storyboard */; };
+		E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4C72A55333800D2D965 /* AuthVC.swift */; };
+		E8D6D4CA2A55336500D2D965 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4C92A55336500D2D965 /* AuthCoordinator.swift */; };
+		E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4CB2A5533E000D2D965 /* AuthViewModel.swift */; };
+		E8D6D4CF2A5535D500D2D965 /* UIViewController+extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4CE2A5535D500D2D965 /* UIViewController+extentions.swift */; };
+		E8D6D4D22A5537C500D2D965 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D12A5537C500D2D965 /* AppConstants.swift */; };
+		E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D42A55469700D2D965 /* AuthModel.swift */; };
+		E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +56,14 @@
 		E8B3761C2A53F987006107FD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E8B3761E2A53F9A0006107FD /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		E8B376202A53FABF006107FD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E8D6D4C52A55284300D2D965 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		E8D6D4C72A55333800D2D965 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		E8D6D4C92A55336500D2D965 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		E8D6D4CB2A5533E000D2D965 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E8D6D4CE2A5535D500D2D965 /* UIViewController+extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extentions.swift"; sourceTree = "<group>"; };
+		E8D6D4D12A5537C500D2D965 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		E8D6D4D42A55469700D2D965 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extentions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,7 @@
 		E85DC1D42A54177400EEAF04 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E8D6D4C12A5527D900D2D965 /* Auth */,
 				E85DC1D52A54185300EEAF04 /* Home */,
 			);
 			path = Modules;
@@ -153,6 +170,8 @@
 		E8B375FE2A53F6BE006107FD /* My Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				E8D6D4D02A5537AA00D2D965 /* Utils */,
+				E8D6D4CD2A5535AD00D2D965 /* Extentions */,
 				230271CB2A541F88006F09BF /* Dynamics */,
 				230271C12A541B4F006F09BF /* Network Layer */,
 				E85DC1D42A54177400EEAF04 /* Modules */,
@@ -179,10 +198,71 @@
 			children = (
 				E8B3761A2A53F961006107FD /* AppCoordinator.swift */,
 				E8B3761C2A53F987006107FD /* Coordinator.swift */,
-				E8B3761E2A53F9A0006107FD /* Storyboarded.swift */,
 				E8B376202A53FABF006107FD /* HomeCoordinator.swift */,
+				E8D6D4C92A55336500D2D965 /* AuthCoordinator.swift */,
+				E8B3761E2A53F9A0006107FD /* Storyboarded.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E8D6D4C12A5527D900D2D965 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4D32A55439E00D2D965 /* Models */,
+				E8D6D4C42A5527F100D2D965 /* Controllers */,
+				E8D6D4C32A5527E800D2D965 /* ViewModels */,
+				E8D6D4C22A5527E200D2D965 /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E8D6D4C22A5527E200D2D965 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4C52A55284300D2D965 /* Auth.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8D6D4C32A5527E800D2D965 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4CB2A5533E000D2D965 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E8D6D4C42A5527F100D2D965 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4C72A55333800D2D965 /* AuthVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E8D6D4CD2A5535AD00D2D965 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4CE2A5535D500D2D965 /* UIViewController+extentions.swift */,
+				E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		E8D6D4D02A5537AA00D2D965 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4D12A5537C500D2D965 /* AppConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E8D6D4D32A55439E00D2D965 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8D6D4D42A55469700D2D965 /* AuthModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8D6D4C62A55284300D2D965 /* Auth.storyboard in Resources */,
 				E8B3760C2A53F6BF006107FD /* LaunchScreen.storyboard in Resources */,
 				E8B376092A53F6BF006107FD /* Assets.xcassets in Resources */,
 				E8B376072A53F6BE006107FD /* Home.storyboard in Resources */,
@@ -303,16 +384,23 @@
 				230271C32A541B6A006F09BF /* APIManager.swift in Sources */,
 				2395AF2E2A5434870003B93B /* APIManager+ErrorHandler.swift in Sources */,
 				230271CF2A542056006F09BF /* APIManager+EndPoints.swift in Sources */,
+				E8D6D4CA2A55336500D2D965 /* AuthCoordinator.swift in Sources */,
 				E8B3761B2A53F961006107FD /* AppCoordinator.swift in Sources */,
+				E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */,
+				E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */,
 				E8B376042A53F6BE006107FD /* HomeVC.swift in Sources */,
 				E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */,
+				E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */,
 				E8B376002A53F6BE006107FD /* AppDelegate.swift in Sources */,
 				230271C72A541BD0006F09BF /* APIManager+ Error.swift in Sources */,
 				E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */,
 				230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */,
+				E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */,
 				E8B376212A53FABF006107FD /* HomeCoordinator.swift in Sources */,
+				E8D6D4CF2A5535D500D2D965 /* UIViewController+extentions.swift in Sources */,
 				E8B3761F2A53F9A0006107FD /* Storyboarded.swift in Sources */,
 				230271CD2A541F9A006F09BF /* Dynamics.swift in Sources */,
+				E8D6D4D22A5537C500D2D965 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +561,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myspotify.My-Spotify";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myspotify.MySpotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -502,7 +590,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myspotify.My-Spotify";
+				PRODUCT_BUNDLE_IDENTIFIER = com.myspotify.MySpotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
