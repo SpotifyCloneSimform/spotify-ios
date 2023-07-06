@@ -19,6 +19,8 @@ enum RequestItemsType: Equatable {
     case getPlaylistSongs(id: String)
     case getAlbumTracks(id: String)
     case getArtist(id: String)
+    case categories
+    case search
 }
 
 // MARK: Extensions
@@ -33,7 +35,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.baseAuth
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
             return AppConstants.baseApi
         }
     }
@@ -42,7 +44,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.api
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
             return ""
         }
     }
@@ -51,7 +53,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return ""
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
             return AppConstants.apiVersion
         }
     }
@@ -76,16 +78,19 @@ extension RequestItemsType: EndPointType {
             return "albums/\(id)"
         case .getArtist(let id):
             return "artists/\(id)"
+        case .categories:
+            return "browse/categories"
+        case .search:
+            return "search"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
             return .get
         case .authToken, .refreshToken:
             return .post
-            
         }
     }
     
@@ -101,7 +106,9 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return URLEncoding.httpBody
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist:
+        case .search:
+            return URLEncoding.queryString
+        default:
             return JSONEncoding.default
         }
     }
