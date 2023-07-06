@@ -48,7 +48,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mus-Vh-1CJ" userLabel="Icon">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpotifyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Mus-Vh-1CJ" userLabel="Icon">
                                 <rect key="frame" x="136.66666666666666" y="159" width="119.99999999999997" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mus-Vh-1CJ" secondAttribute="height" id="I6E-No-TNp"/>
@@ -94,7 +94,7 @@
     </scenes>
     <resources>
         <image name="AlbumBackground" width="1366" height="768"/>
-        <image name="Icon" width="369.5" height="354.5"/>
+        <image name="SpotifyLogo" width="369.5" height="354.5"/>
         <namedColor name="AccentColor">
             <color red="0.11500000208616257" green="0.84299999475479126" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
