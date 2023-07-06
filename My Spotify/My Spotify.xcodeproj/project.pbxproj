@@ -25,6 +25,8 @@
 		E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B3761C2A53F987006107FD /* Coordinator.swift */; };
 		E8B3761F2A53F9A0006107FD /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B3761E2A53F9A0006107FD /* Storyboarded.swift */; };
 		E8B376212A53FABF006107FD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B376202A53FABF006107FD /* HomeCoordinator.swift */; };
+		E8C38E292A56910A004CE02F /* RefreshTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C38E282A56910A004CE02F /* RefreshTokenViewModel.swift */; };
+		E8C38E2B2A5695FD004CE02F /* APIManager+Inerceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C38E2A2A5695FD004CE02F /* APIManager+Inerceptor.swift */; };
 		E8D6D4C62A55284300D2D965 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8D6D4C52A55284300D2D965 /* Auth.storyboard */; };
 		E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4C72A55333800D2D965 /* AuthVC.swift */; };
 		E8D6D4CA2A55336500D2D965 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4C92A55336500D2D965 /* AuthCoordinator.swift */; };
@@ -58,6 +60,8 @@
 		E8B3761C2A53F987006107FD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E8B3761E2A53F9A0006107FD /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		E8B376202A53FABF006107FD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		E8C38E282A56910A004CE02F /* RefreshTokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenViewModel.swift; sourceTree = "<group>"; };
+		E8C38E2A2A5695FD004CE02F /* APIManager+Inerceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Inerceptor.swift"; sourceTree = "<group>"; };
 		E8D6D4C52A55284300D2D965 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		E8D6D4C72A55333800D2D965 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		E8D6D4C92A55336500D2D965 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				230271C62A541BD0006F09BF /* APIManager+ Error.swift */,
 				230271CE2A542056006F09BF /* APIManager+EndPoints.swift */,
 				2395AF2D2A5434870003B93B /* APIManager+ErrorHandler.swift */,
+				E8C38E282A56910A004CE02F /* RefreshTokenViewModel.swift */,
+				E8C38E2A2A5695FD004CE02F /* APIManager+Inerceptor.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				E84F68422A55937E00430D8A /* KeychainHelper.swift in Sources */,
 				E8B3761B2A53F961006107FD /* AppCoordinator.swift in Sources */,
 				E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */,
+				E8C38E2B2A5695FD004CE02F /* APIManager+Inerceptor.swift in Sources */,
 				E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */,
 				E8B376042A53F6BE006107FD /* HomeVC.swift in Sources */,
 				E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */,
@@ -408,6 +415,7 @@
 				E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */,
 				230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */,
 				E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */,
+				E8C38E292A56910A004CE02F /* RefreshTokenViewModel.swift in Sources */,
 				E8B376212A53FABF006107FD /* HomeCoordinator.swift in Sources */,
 				E8D6D4CF2A5535D500D2D965 /* UIViewController+extentions.swift in Sources */,
 				E8B3761F2A53F9A0006107FD /* Storyboarded.swift in Sources */,
