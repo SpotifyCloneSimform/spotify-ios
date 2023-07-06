@@ -11,12 +11,11 @@ import Reachability
 
 class APIManager {
     
-    init() { }
-    
     // MARK: Vars & Lets
-    private let sessionManager: Session = Session()
-    static var shared = APIManager()
+    private let sessionManager: Session
+    private let interceptor: APIManagerInterceptor
     let reachability = try? Reachability()
+    static let shared = APIManager(interceptor: APIManagerInterceptor())
     static let errorCodeList =  [400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 427, 428, 429, 431, 451, 500, -1009, -1001]
     
     // MARK: Methods
@@ -73,5 +72,10 @@ class APIManager {
         return isSuccess
     }
     
+    // MARK: - Initializer
+    private init(interceptor: APIManagerInterceptor) {
+        self.interceptor = interceptor
+        self.sessionManager = Session(interceptor: interceptor)
+    }
+    
 }
-

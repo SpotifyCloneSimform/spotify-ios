@@ -10,6 +10,7 @@ import Alamofire
 
 enum RequestItemsType: Equatable {
     case authToken(code: String)
+    case refreshToken
 }
 
 // MARK: Extensions
@@ -21,7 +22,7 @@ extension RequestItemsType: EndPointType {
 
     var baseURL: String {
         switch self {
-        case .authToken:
+        case .authToken, .refreshToken:
             return AppConstants.baseAuth
         }
     }
@@ -32,14 +33,14 @@ extension RequestItemsType: EndPointType {
     
     var version: String {
         switch self {
-        case .authToken:
+        case .authToken, .refreshToken:
             return ""
         }
     }
     
     var path: String {
         switch self {
-        case .authToken:
+        case .authToken, .refreshToken:
             return "token"
         }
     }
@@ -50,7 +51,7 @@ extension RequestItemsType: EndPointType {
     
     var headers: HTTPHeaders? {
         switch self {
-        case .authToken:
+        case .authToken, .refreshToken:
             if let basicCredential =  "\(AppConstants.clientId):\(AppConstants.clientSecret)".data(using: .utf8)?.base64EncodedString() {
                 return [
                     "Authorization": "Basic " + basicCredential
@@ -67,7 +68,7 @@ extension RequestItemsType: EndPointType {
     
     var encoding: ParameterEncoding {
         switch self {
-        case .authToken:
+        case .authToken, .refreshToken:
             return URLEncoding.httpBody
         default:
             return JSONEncoding.default
