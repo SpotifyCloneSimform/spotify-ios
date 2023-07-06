@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 // MARK: - Welcome
 struct LibraryPlaylist: Codable {
     let href: String?

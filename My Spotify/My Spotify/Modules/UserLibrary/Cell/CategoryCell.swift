@@ -20,7 +20,6 @@ class CategoryCell: UICollectionViewCell {
         
         super.awakeFromNib()
         layer.cornerRadius = bounds.height / 2 - 10
-
         let transparentView = UIView(frame: bounds.insetBy(dx: 0, dy:  -30))
         transparentView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         backgroundView = transparentView

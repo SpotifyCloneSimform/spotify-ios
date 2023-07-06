@@ -6,12 +6,12 @@
 //
 
 import Foundation
-
 struct LibraryDisplay {
     let name: String?
     let ownerDisplayName: String?
     let image: String?
     let type: LibraryItemType
+    let id: String?
 }
 
 enum LibraryItemType: String {

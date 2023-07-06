@@ -29,7 +29,7 @@ class LibraryViewModel {
             switch result {
             case .success(let libraryPlaylist):
                 let data = libraryPlaylist.items?.map({ item in
-                    LibraryDisplay(name: item.name, ownerDisplayName: item.owner?.displayName, image: item.images?[0].url, type: LibraryItemType.playlist)
+                    LibraryDisplay(name: item.name, ownerDisplayName: item.owner?.displayName, image: item.images?[0].url, type: LibraryItemType.playlist, id: item.id)
                 })
                 self.libraryInitalItems.value.append(LibraryDisplayData(index: 0, isFiltered: false, type: LibraryItemType.playlist, data: data ?? []))
                 self.libraryInitalItems.fire()
@@ -46,7 +46,7 @@ class LibraryViewModel {
             switch result {
             case .success(let libraryAlbums):
                 let data = libraryAlbums.items?.map({ items in
-                    LibraryDisplay(name: items.album.name, ownerDisplayName: items.album.artists?[0].name, image: items.album.images?[0].url, type: LibraryItemType.album)
+                    LibraryDisplay(name: items.album.name, ownerDisplayName: items.album.artists?[0].name, image: items.album.images?[0].url, type: LibraryItemType.album, id: items.album.id)
                 })
                 self.libraryInitalItems.value.append(LibraryDisplayData(index: 0, isFiltered: false, type: LibraryItemType.album, data: data ?? []))
                 self.libraryInitalItems.fire()
@@ -65,7 +65,7 @@ class LibraryViewModel {
             switch result {
             case .success(let libraryArtists):
                 let data = libraryArtists.artists?.items?.map({ item in
-                    LibraryDisplay(name: item.name, ownerDisplayName: "", image: item.images?[0].url, type: LibraryItemType.artists)
+                    LibraryDisplay(name: item.name, ownerDisplayName: "", image: item.images?[0].url, type: LibraryItemType.artists, id: item.id)
                 })
                 self.libraryInitalItems.value.append(LibraryDisplayData(index: 0, isFiltered: false, type: LibraryItemType.artists, data: data ?? []))
                 self.libraryInitalItems.fire()
@@ -86,7 +86,7 @@ class LibraryViewModel {
             case .success(let libraryPlaylist):
               
                 let data = libraryPlaylist.items?.map({ item in
-                    LibraryDisplay(name: item.name, ownerDisplayName: item.owner?.displayName, image: item.images?[0].url, type: LibraryItemType.playlist)
+                    LibraryDisplay(name: item.name, ownerDisplayName: item.owner?.displayName, image: item.images?[0].url, type: LibraryItemType.playlist, id: item.id)
                 })
                 
                 self.libraryInitalItems.value.removeAll()
@@ -110,7 +110,7 @@ class LibraryViewModel {
             case .success(let libraryArtists):
                 
                 let data = libraryArtists.artists?.items?.map({ item in
-                    LibraryDisplay(name: item.name, ownerDisplayName: "", image: item.images?[0].url, type: LibraryItemType.artists)
+                    LibraryDisplay(name: item.name, ownerDisplayName: "", image: item.images?[0].url, type: LibraryItemType.artists, id: item.id)
                 })
                 self.libraryInitalItems.value.removeAll()
                 self.libraryInitalItems.value.append(LibraryDisplayData(index: 0, isFiltered: false, type: LibraryItemType.artists, data: data ?? []))
@@ -132,7 +132,7 @@ class LibraryViewModel {
             case .success(let libraryAlbum):
                 
                 let data = libraryAlbum.items?.map({ items in
-                    LibraryDisplay(name: items.album.name, ownerDisplayName: items.album.artists?[0].name, image: items.album.images?[0].url, type: LibraryItemType.album)
+                    LibraryDisplay(name: items.album.name, ownerDisplayName: items.album.artists?[0].name, image: items.album.images?[0].url, type: LibraryItemType.album, id: items.album.id)
                 })
                 self.libraryInitalItems.value.removeAll()
                 self.libraryInitalItems.value.append(LibraryDisplayData(index: 0, isFiltered: true, type: LibraryItemType.album, data: data ?? []))

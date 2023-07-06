@@ -36,6 +36,17 @@
 		23AFB5612A56DB59005E03CF /* LibraryArtistsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AFB55F2A56DB59005E03CF /* LibraryArtistsCell.swift */; };
 		23AFB5622A56DB59005E03CF /* LibraryArtistsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AFB5602A56DB59005E03CF /* LibraryArtistsCell.xib */; };
 		23E5B3042A56ED9A0090AD91 /* LibraryAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3032A56ED9A0090AD91 /* LibraryAlbum.swift */; };
+		23E5B30B2A57D9AC0090AD91 /* ViewPlaylist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23E5B30A2A57D9AC0090AD91 /* ViewPlaylist.storyboard */; };
+		23E5B30D2A57D9C10090AD91 /* ViewPlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B30C2A57D9C10090AD91 /* ViewPlaylistVC.swift */; };
+		23E5B3122A57DECB0090AD91 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3112A57DECB0090AD91 /* SongCell.swift */; };
+		23E5B3152A57E06E0090AD91 /* ViewPlaylistCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3142A57E06E0090AD91 /* ViewPlaylistCoordinator.swift */; };
+		23E5B3172A57E5C80090AD91 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3162A57E5C80090AD91 /* Song.swift */; };
+		23E5B3192A57E83A0090AD91 /* ViewSongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3182A57E83A0090AD91 /* ViewSongsViewModel.swift */; };
+		23E5B31B2A57F51C0090AD91 /* DisplaySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B31A2A57F51C0090AD91 /* DisplaySong.swift */; };
+		23E5B31D2A5813220090AD91 /* AlbumSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B31C2A5813220090AD91 /* AlbumSong.swift */; };
+		23E5B3202A581B270090AD91 /* AlbumSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B31E2A581B270090AD91 /* AlbumSongCell.swift */; };
+		23E5B3212A581B270090AD91 /* AlbumSongCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E5B31F2A581B270090AD91 /* AlbumSongCell.xib */; };
+		23E5B3232A582C250090AD91 /* AlbumArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5B3222A582C250090AD91 /* AlbumArtist.swift */; };
 		E84F68422A55937E00430D8A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84F68412A55937E00430D8A /* KeychainHelper.swift */; };
 		E8B376002A53F6BE006107FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B375FF2A53F6BE006107FD /* AppDelegate.swift */; };
 		E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B376012A53F6BE006107FD /* SceneDelegate.swift */; };
@@ -88,6 +99,17 @@
 		23AFB55F2A56DB59005E03CF /* LibraryArtistsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryArtistsCell.swift; sourceTree = "<group>"; };
 		23AFB5602A56DB59005E03CF /* LibraryArtistsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryArtistsCell.xib; sourceTree = "<group>"; };
 		23E5B3032A56ED9A0090AD91 /* LibraryAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbum.swift; sourceTree = "<group>"; };
+		23E5B30A2A57D9AC0090AD91 /* ViewPlaylist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewPlaylist.storyboard; sourceTree = "<group>"; };
+		23E5B30C2A57D9C10090AD91 /* ViewPlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlaylistVC.swift; sourceTree = "<group>"; };
+		23E5B3112A57DECB0090AD91 /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		23E5B3142A57E06E0090AD91 /* ViewPlaylistCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlaylistCoordinator.swift; sourceTree = "<group>"; };
+		23E5B3162A57E5C80090AD91 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		23E5B3182A57E83A0090AD91 /* ViewSongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSongsViewModel.swift; sourceTree = "<group>"; };
+		23E5B31A2A57F51C0090AD91 /* DisplaySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySong.swift; sourceTree = "<group>"; };
+		23E5B31C2A5813220090AD91 /* AlbumSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSong.swift; sourceTree = "<group>"; };
+		23E5B31E2A581B270090AD91 /* AlbumSongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSongCell.swift; sourceTree = "<group>"; };
+		23E5B31F2A581B270090AD91 /* AlbumSongCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSongCell.xib; sourceTree = "<group>"; };
+		23E5B3222A582C250090AD91 /* AlbumArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumArtist.swift; sourceTree = "<group>"; };
 		27E810A9ED1CA34D23D432E4 /* Pods-My Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spotify.debug.xcconfig"; path = "Target Support Files/Pods-My Spotify/Pods-My Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		511D686C12192AA0A88331D3 /* Pods_My_Spotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Spotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4E78549BF3E08923DAE99E /* Pods-My Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Spotify.release.xcconfig"; path = "Target Support Files/Pods-My Spotify/Pods-My Spotify.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +276,64 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		23E5B3052A57D97B0090AD91 /* ViewPlaylist */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B3132A57E05C0090AD91 /* Coordinator */,
+				23E5B3102A57DDB60090AD91 /* Cell */,
+				23E5B3082A57D9970090AD91 /* Model */,
+				23E5B3072A57D9900090AD91 /* ViewModel */,
+				23E5B3062A57D98B0090AD91 /* View */,
+			);
+			path = ViewPlaylist;
+			sourceTree = "<group>";
+		};
+		23E5B3062A57D98B0090AD91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B30A2A57D9AC0090AD91 /* ViewPlaylist.storyboard */,
+				23E5B30C2A57D9C10090AD91 /* ViewPlaylistVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23E5B3072A57D9900090AD91 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B3182A57E83A0090AD91 /* ViewSongsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		23E5B3082A57D9970090AD91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B3162A57E5C80090AD91 /* Song.swift */,
+				23E5B31A2A57F51C0090AD91 /* DisplaySong.swift */,
+				23E5B31C2A5813220090AD91 /* AlbumSong.swift */,
+				23E5B3222A582C250090AD91 /* AlbumArtist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23E5B3102A57DDB60090AD91 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B3112A57DECB0090AD91 /* SongCell.swift */,
+				23E5B31E2A581B270090AD91 /* AlbumSongCell.swift */,
+				23E5B31F2A581B270090AD91 /* AlbumSongCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		23E5B3132A57E05C0090AD91 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				23E5B3142A57E06E0090AD91 /* ViewPlaylistCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		3B7FB4DCE0D7424E43D06704 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +362,7 @@
 		E85DC1D42A54177400EEAF04 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				23E5B3052A57D97B0090AD91 /* ViewPlaylist */,
 				23AFB5442A56B8B4005E03CF /* UserLibrary */,
 				E8D6D4C12A5527D900D2D965 /* Auth */,
 				E85DC1D52A54185300EEAF04 /* Home */,
@@ -501,9 +582,11 @@
 				E8B376092A53F6BF006107FD /* Assets.xcassets in Resources */,
 				2395AF392A5530460003B93B /* CVPlaylist.xib in Resources */,
 				2395AF4E2A55847C0003B93B /* TVHomeHeader.xib in Resources */,
+				23E5B30B2A57D9AC0090AD91 /* ViewPlaylist.storyboard in Resources */,
 				E8B376072A53F6BE006107FD /* Home.storyboard in Resources */,
 				23AFB5622A56DB59005E03CF /* LibraryArtistsCell.xib in Resources */,
 				23AFB54A2A56B8E1005E03CF /* UserLibrary.storyboard in Resources */,
+				23E5B3212A581B270090AD91 /* AlbumSongCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,9 +644,11 @@
 				230271CF2A542056006F09BF /* APIManager+EndPoints.swift in Sources */,
 				23AFB55E2A56D5BB005E03CF /* LibraryArtists.swift in Sources */,
 				23AFB5572A56BDE0005E03CF /* CategoryCell.swift in Sources */,
+				23E5B30D2A57D9C10090AD91 /* ViewPlaylistVC.swift in Sources */,
 				E8D6D4CA2A55336500D2D965 /* AuthCoordinator.swift in Sources */,
 				E84F68422A55937E00430D8A /* KeychainHelper.swift in Sources */,
 				E8B3761B2A53F961006107FD /* AppCoordinator.swift in Sources */,
+				23E5B31B2A57F51C0090AD91 /* DisplaySong.swift in Sources */,
 				E8D6D4C82A55333800D2D965 /* AuthVC.swift in Sources */,
 				E8C38E2B2A5695FD004CE02F /* APIManager+Inerceptor.swift in Sources */,
 				23AFB54E2A56B9A8005E03CF /* LibraryViewModel.swift in Sources */,
@@ -572,17 +657,24 @@
 				E8B3761B2A53F961006107FD /* AppCoordinator.swift in Sources */,
 				2395AF382A5530460003B93B /* CVPlaylist.swift in Sources */,
 				E8B376042A53F6BE006107FD /* HomeVC.swift in Sources */,
+				23E5B3172A57E5C80090AD91 /* Song.swift in Sources */,
 				23AFB55A2A56C374005E03CF /* LibraryCoordinator.swift in Sources */,
 				E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */,
+				23E5B3122A57DECB0090AD91 /* SongCell.swift in Sources */,
 				23AFB55C2A56C97F005E03CF /* LibraryDisplay.swift in Sources */,
 				23AFB54C2A56B8FF005E03CF /* UserLibraryVC.swift in Sources */,
+				23E5B31D2A5813220090AD91 /* AlbumSong.swift in Sources */,
+				23E5B3202A581B270090AD91 /* AlbumSongCell.swift in Sources */,
 				E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */,
 				23AFB5612A56DB59005E03CF /* LibraryArtistsCell.swift in Sources */,
 				E8B376002A53F6BE006107FD /* AppDelegate.swift in Sources */,
 				230271C72A541BD0006F09BF /* APIManager+Error.swift in Sources */,
 				230271C72A541BD0006F09BF /* APIManager+Error.swift in Sources */,
+				230271C72A541BD0006F09BF /* APIManager+Error.swift in Sources */,
+				23E5B3152A57E06E0090AD91 /* ViewPlaylistCoordinator.swift in Sources */,
 				E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */,
 				23E5B3042A56ED9A0090AD91 /* LibraryAlbum.swift in Sources */,
+				23E5B3232A582C250090AD91 /* AlbumArtist.swift in Sources */,
 				23AFB5512A56BBA1005E03CF /* LibraryCell.swift in Sources */,
 				230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */,
 				E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */,
@@ -603,6 +695,7 @@
 				2395AF3C2A5533390003B93B /* TVHomeCell.swift in Sources */,
 				230271CD2A541F9A006F09BF /* Dynamics.swift in Sources */,
 				E8D6D4D22A5537C500D2D965 /* AppConstants.swift in Sources */,
+				23E5B3192A57E83A0090AD91 /* ViewSongsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
