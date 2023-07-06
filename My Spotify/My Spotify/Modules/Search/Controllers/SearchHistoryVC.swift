@@ -81,11 +81,19 @@ extension SearchHistoryVC: UITableViewDataSource {
     }
 }
 
+// MARK: - Table View
 extension SearchHistoryVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell.reuseIdentifier == "LoadingIndicatorCell" {
             searchHistoryViewModel.loadMoreResults(query: searchBar.text ?? "")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchItem = searchHistoryViewModel.searchItems.value[indexPath.row]
+        if (searchItem.type == .track) {
+            searchCoordinator?.showOptions(trackId: searchItem.id)
         }
     }
 }

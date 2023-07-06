@@ -38,18 +38,6 @@ struct Item: Codable {
     }
 }
 
-// MARK: - ExternalUrls
-struct ExternalUrls: Codable {
-    let spotify: String?
-}
-
-// MARK: - Image
-struct Image: Codable {
-    let height: Int?
-    let url: String?
-    let width: Int?
-}
-
 // MARK: - Owner
 struct Owner: Codable {
     let displayName: String?

@@ -21,6 +21,10 @@ enum RequestItemsType: Equatable {
     case getArtist(id: String)
     case categories
     case search
+    case track(id: String)
+    case checkLike
+    case likeTrack
+    case dislikeTrack
 }
 
 // MARK: Extensions
@@ -35,7 +39,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.baseAuth
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
             return AppConstants.baseApi
         }
     }
@@ -44,7 +48,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.api
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
             return ""
         }
     }
@@ -53,7 +57,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return ""
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
             return AppConstants.apiVersion
         }
     }
@@ -82,15 +86,25 @@ extension RequestItemsType: EndPointType {
             return "browse/categories"
         case .search:
             return "search"
+        case .track(let id):
+            return "tracks/\(id)"
+        case .checkLike:
+            return "me/tracks/contains"
+        case .likeTrack, .dislikeTrack:
+            return "me/tracks"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike:
             return .get
         case .authToken, .refreshToken:
             return .post
+        case .likeTrack:
+            return .put
+        case .dislikeTrack:
+            return .delete
         }
     }
     
@@ -106,7 +120,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return URLEncoding.httpBody
-        case .search:
+        case .search, .checkLike:
             return URLEncoding.queryString
         default:
             return JSONEncoding.default
