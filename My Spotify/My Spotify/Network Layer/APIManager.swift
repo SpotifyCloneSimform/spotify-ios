@@ -44,10 +44,10 @@ class APIManager {
                     handler(.success(result))
                     
                 } catch {
-                    handler(.failure(.init(title: APIError.errorAlertTitle, body: APIError.genericErrorMessage)))
+                    handler(.failure(self.parseApiError(dataResponse: data)))
                 }
             } else {
-                handler(.failure(CustomError(title: APIError.errorAlertTitle, body: APIError.genericErrorMessage)))
+                handler(.failure(self.parseApiError(dataResponse: data)))
             }
         }
     }

@@ -10,7 +10,7 @@
 		0110CDA57750CF601D37E6E3 /* Pods_My_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 511D686C12192AA0A88331D3 /* Pods_My_Spotify.framework */; };
 		230271C32A541B6A006F09BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271C22A541B6A006F09BF /* APIManager.swift */; };
 		230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271C42A541BA4006F09BF /* APIManager+Request.swift */; };
-		230271C72A541BD0006F09BF /* APIManager+ Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271C62A541BD0006F09BF /* APIManager+ Error.swift */; };
+		230271C72A541BD0006F09BF /* APIManager+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271C62A541BD0006F09BF /* APIManager+Error.swift */; };
 		230271CD2A541F9A006F09BF /* Dynamics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271CC2A541F9A006F09BF /* Dynamics.swift */; };
 		230271CF2A542056006F09BF /* APIManager+EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230271CE2A542056006F09BF /* APIManager+EndPoints.swift */; };
 		2395AF2E2A5434870003B93B /* APIManager+ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395AF2D2A5434870003B93B /* APIManager+ErrorHandler.swift */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		230271C22A541B6A006F09BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		230271C42A541BA4006F09BF /* APIManager+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Request.swift"; sourceTree = "<group>"; };
-		230271C62A541BD0006F09BF /* APIManager+ Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+ Error.swift"; sourceTree = "<group>"; };
+		230271C62A541BD0006F09BF /* APIManager+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+Error.swift"; sourceTree = "<group>"; };
 		230271CC2A541F9A006F09BF /* Dynamics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamics.swift; sourceTree = "<group>"; };
 		230271CE2A542056006F09BF /* APIManager+EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+EndPoints.swift"; sourceTree = "<group>"; };
 		2395AF2D2A5434870003B93B /* APIManager+ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIManager+ErrorHandler.swift"; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			children = (
 				230271C22A541B6A006F09BF /* APIManager.swift */,
 				230271C42A541BA4006F09BF /* APIManager+Request.swift */,
-				230271C62A541BD0006F09BF /* APIManager+ Error.swift */,
+				230271C62A541BD0006F09BF /* APIManager+Error.swift */,
 				230271CE2A542056006F09BF /* APIManager+EndPoints.swift */,
 				2395AF2D2A5434870003B93B /* APIManager+ErrorHandler.swift */,
 				E8C38E282A56910A004CE02F /* RefreshTokenViewModel.swift */,
@@ -411,7 +411,7 @@
 				E8B3761D2A53F987006107FD /* Coordinator.swift in Sources */,
 				E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */,
 				E8B376002A53F6BE006107FD /* AppDelegate.swift in Sources */,
-				230271C72A541BD0006F09BF /* APIManager+ Error.swift in Sources */,
+				230271C72A541BD0006F09BF /* APIManager+Error.swift in Sources */,
 				E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */,
 				230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */,
 				E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */,
