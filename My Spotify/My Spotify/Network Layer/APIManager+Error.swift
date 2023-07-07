@@ -21,7 +21,13 @@ class CustomError: Error {
 
 class NetworkError: Codable {
 
-    let message: String
-    let code: Int?
+    let error: ApiError
 
+}
+
+class ApiError: Codable {
+    
+    let status: Int
+    let message: String
+    
 }

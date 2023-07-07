@@ -50,16 +50,7 @@ extension RequestItemsType: EndPointType {
     }
     
     var headers: HTTPHeaders? {
-        switch self {
-        case .authToken, .refreshToken:
-            if let basicCredential =  "\(AppConstants.clientId):\(AppConstants.clientSecret)".data(using: .utf8)?.base64EncodedString() {
-                return [
-                    "Authorization": "Basic " + basicCredential
-                ]
-            } else {
-                return []
-            }
-        }
+        return []
     }
     
     var url: URL {
