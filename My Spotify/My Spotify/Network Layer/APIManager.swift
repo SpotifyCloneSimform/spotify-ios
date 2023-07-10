@@ -25,7 +25,6 @@ class APIManager {
             handler(.failure(CustomError(title: APIError.errorAlertTitle, body: APIError.noInternet)))
             return
         }
-        
         self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
