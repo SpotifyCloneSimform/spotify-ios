@@ -22,6 +22,7 @@ class LibraryViewModel {
     var libraryInitalItems = Dynamic<[LibraryDisplayData]>([])
     
     func getAllLibraryData() {
+        libraryInitalItems.value.removeAll()
         APIManager.shared.call(type: .getUserPlaylists) { [weak self] (result: Result<LibraryPlaylist, CustomError>) in
             guard let self = self else {
                 return

@@ -51,27 +51,6 @@ class APIManager {
         }
     }
     
-    //MARK: - Load image from URL api
-        func callLoadImage(url: String, complition: @escaping (Result<UIImage, CustomError>) -> Void) {
-            
-            guard reachability?.connection ?? .unavailable != .unavailable else {
-                complition(.failure(CustomError(title: APIError.errorAlertTitle, body: APIError.noInternet)))
-                return
-            }
-            
-            self.sessionManager.request(url).responseData {
-                response in
-                
-                guard let imageData = response.data, let image = UIImage(data: imageData) else{
-                    complition(.failure(.init(title: "App", body: "Not Found")))
-                    return
-                }
-                
-                complition(.success(image))
-                
-            }
-        }
-    
     // Handle Response
     private func handleResponseCode(res: AFDataResponse<Data>?) -> Bool {
         var isSuccess: Bool = false
