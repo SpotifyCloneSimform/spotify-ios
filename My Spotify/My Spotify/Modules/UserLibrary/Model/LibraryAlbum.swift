@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 struct LibraryAlbum: Codable {
     let href: String?
     let items: [LibraryAlbumItem]?

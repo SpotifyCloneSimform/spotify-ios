@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-
 class LibraryCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     
@@ -21,5 +20,10 @@ class LibraryCoordinator: Coordinator {
         let vc = UserLibraryVC.instantiate(from: .userLibrary)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func gotoViewSongs(songData: LibraryDisplay) {
+        let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
+        viewPlaylistCoordinator.start()
     }
 }

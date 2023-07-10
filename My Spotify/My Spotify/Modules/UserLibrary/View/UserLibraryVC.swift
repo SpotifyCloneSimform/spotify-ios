@@ -95,6 +95,15 @@ extension UserLibraryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         view.bounds.height / 8
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if libraryDisplayItems[indexPath.section].type == LibraryItemType.playlist {
+            coordinator?.gotoViewSongs(songData: libraryDisplayItems[indexPath.section].data[indexPath.row])
+        } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.album {
+            coordinator?.gotoViewSongs(songData: libraryDisplayItems[indexPath.section].data[indexPath.row])
+        }
+        
+    }
 }
 
 // MARK: - Collection view datasource
