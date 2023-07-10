@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LibraryArtistsCell" rowHeight="95" id="KGk-i7-Jjw" customClass="LibraryArtistsCell" customModule="My_Spotify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-fM-M7D">
+                        <rect key="frame" x="10" y="10" width="75" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wP9-fM-M7D" secondAttribute="height" id="CNL-ww-JiS"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOd-b5-ljd">
+                        <rect key="frame" x="110" y="37" width="92.333333333333314" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="wP9-fM-M7D" secondAttribute="bottom" constant="10" id="Fha-U3-Bhv"/>
+                    <constraint firstItem="sOd-b5-ljd" firstAttribute="leading" secondItem="wP9-fM-M7D" secondAttribute="trailing" constant="25" id="WK2-Oy-Rv3"/>
+                    <constraint firstItem="sOd-b5-ljd" firstAttribute="centerY" secondItem="wP9-fM-M7D" secondAttribute="centerY" id="eq9-I9-Rnv"/>
+                    <constraint firstItem="wP9-fM-M7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xYJ-Hn-cSy"/>
+                    <constraint firstItem="wP9-fM-M7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xhX-d5-A9U"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="imgArtists" destination="wP9-fM-M7D" id="NVk-H5-bnM"/>
+                <outlet property="lblArtistsName" destination="sOd-b5-ljd" id="VPc-6m-ZtJ"/>
+            </connections>
+            <point key="canvasLocation" x="145.03816793893128" y="6.6901408450704229"/>
+        </tableViewCell>
+    </objects>
+</document>
