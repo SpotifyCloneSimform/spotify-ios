@@ -12,6 +12,7 @@ enum Storyboard: String {
     case home = "Home"
     case userLibrary = "UserLibrary"
     case viewPlaylist = "ViewPlaylist"
+    case search = "Search"
 }
 
 protocol Storyboarded {

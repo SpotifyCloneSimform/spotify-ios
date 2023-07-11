@@ -27,7 +27,7 @@ class APIManagerInterceptor: RequestInterceptor {
     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
         if (request.error?.responseCode == 401) {
             refreshTokenViewModel.isSuccess.bind { isSucsess in
-                isSucsess ? completion(.retry) : completion(.doNotRetry)
+                isSucsess ? completion(.retryWithDelay(1)) : completion(.doNotRetry)
             }
             refreshTokenViewModel.callRefreshToken()
         } else {

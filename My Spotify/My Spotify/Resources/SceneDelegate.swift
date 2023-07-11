@@ -60,7 +60,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func handleUrl(_ url: URL) {
-        let scene = UIApplication.shared.connectedScenes.first
         appCoordinator?.goToAuth(with: url.valueOf("code"))
     }
 
