@@ -26,4 +26,10 @@ class AuthCoordinator: Coordinator {
         authVc.code = code
         navigationController.viewControllers = [authVc]
     }
+    
+    func goToCombineScreen() {
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.appCoordinator?.goToCombineScreen()
+        }
+    }
 }

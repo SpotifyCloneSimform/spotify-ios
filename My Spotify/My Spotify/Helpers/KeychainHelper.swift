@@ -39,6 +39,14 @@ class KeychainHelper {
         }
     }
     
+    var userId: String? {
+        get {
+            keychain[.userId]
+        } set {
+            keychain[.userId] = newValue
+        }
+    }
+    
     // MARK: - Methods
     func clearData() {
         keychain.removeAllKeys()
@@ -52,4 +60,5 @@ extension KeychainWrapper.Key {
     static let accessToken: KeychainWrapper.Key = "accessToken"
     static let refreshToken: KeychainWrapper.Key = "refreshToken"
     static let expiryTime: KeychainWrapper.Key = "expiryTime"
+    static let userId: KeychainWrapper.Key = "userId"
 }

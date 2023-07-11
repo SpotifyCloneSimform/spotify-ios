@@ -28,6 +28,17 @@ struct Followers: Codable {
     let total: Int?
 }
 
+// MARK: - ExplicitContent
+struct ExplicitContent: Codable {
+    let filterEnabled: Bool?
+    let filterLocked: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case filterEnabled = "filter_enabled"
+        case filterLocked = "filter_locked"
+    }
+}
+
 // MARK: - DefaultCodable
 // Default structure used when there is no response body.
 struct DefaultCodable: Codable {
