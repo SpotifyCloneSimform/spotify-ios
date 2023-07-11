@@ -28,3 +28,9 @@ struct Album: Codable {
         case type, uri
     }
 }
+
+enum AlbumType: String, Codable {
+    case album = "album"
+    case compilation = "compilation"
+    case single = "single"
+}

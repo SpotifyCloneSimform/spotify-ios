@@ -17,12 +17,4 @@ struct UserProfile: Codable {
     let country, product: String?
     let explicitContent: ExplicitContent?
     let email: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case displayName = "display_name"
-        case externalUrls = "external_urls"
-        case href, id, images, type, uri, followers, country, product
-        case explicitContent = "explicit_content"
-        case email
-    }
 }

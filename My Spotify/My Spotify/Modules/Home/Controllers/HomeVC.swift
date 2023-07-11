@@ -23,8 +23,11 @@ class HomeVC: UIViewController, Storyboarded {
         setUpBind()
     }
     
+    // MARK: - Methods
     private func setUpUI() {
-        
+        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: self, action: #selector(viewProfile))
+        profileButton.tintColor = .white
+        navigationItem.rightBarButtonItem = profileButton
         viewModel.getPlaylist()
         viewModel.getAlbumbs()
         viewModel.getFeaturedPlaylist()
@@ -33,7 +36,6 @@ class HomeVC: UIViewController, Storyboarded {
         
     }
     
-    
     private func setUpBind() {
         viewModel.getAllData.bind { [weak self] homeItems in
             guard let self = self else { return }
@@ -41,8 +43,12 @@ class HomeVC: UIViewController, Storyboarded {
             self.homeItems = homeItems
             self.tblHome.layoutIfNeeded()
             self.tblHome.reloadData()
-            
         }
+    }
+    
+    @objc
+    private func viewProfile() {
+        homeCoordinator?.goToProfile()
     }
 }
 

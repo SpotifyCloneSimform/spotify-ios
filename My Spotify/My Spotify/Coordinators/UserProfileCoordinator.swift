@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  UserProfileCoordinator.swift
 //  My Spotify
 //
 //  Created by Krunal Patel on 04/07/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCoordinator: Coordinator {
+class UserProfileCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     
@@ -18,18 +18,19 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeVC.instantiate(from: .home)
-        vc.homeCoordinator = self
+        let vc = UserProfileVC.instantiate(from: .userProfile)
+        vc.userProfileCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func gotoViewSongs(songData: LibraryDisplay) {
+    func goToViewSongs(songData: LibraryDisplay) {
         let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
         viewPlaylistCoordinator.start()
     }
     
-    func goToProfile() {
-        let profileCoordinator = UserProfileCoordinator(navigationController: navigationController)
-        profileCoordinator.start()
+    func logout() {
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            sceneDelegate.appCoordinator?.goToAuth()
+        }
     }
 }
