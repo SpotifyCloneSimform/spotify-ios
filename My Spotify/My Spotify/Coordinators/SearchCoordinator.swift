@@ -28,4 +28,9 @@ class SearchCoordinator: Coordinator {
         vc.searchCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func showOptions(trackId: String) {
+        let coordinator = TrackOptionsCoordinator(navigationController: navigationController, trackId: trackId)
+        coordinator.start()
+    }
 }

@@ -56,7 +56,7 @@ extension SearchVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as? CategoryCell else  {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCategoryCell", for: indexPath) as? SearchCategoryCell else  {
             return UICollectionViewCell()
         }
         
@@ -65,10 +65,6 @@ extension SearchVC: UICollectionViewDataSource {
         cell.configCell(category: category)
         return cell
     }
-    
-}
-
-extension SearchVC: UICollectionViewDelegate {
     
 }
 

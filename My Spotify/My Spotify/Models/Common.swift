@@ -27,3 +27,9 @@ struct Followers: Codable {
     let href: String?
     let total: Int?
 }
+
+// MARK: - DefaultCodable
+// Default structure used when there is no response body.
+struct DefaultCodable: Codable {
+    
+}

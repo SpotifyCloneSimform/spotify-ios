@@ -45,13 +45,13 @@ class SearchHistoryViewModel {
                 if let tracks = response.tracks?.items {
                     self.searchItems.value += tracks.map { track in
                         let artists = track.artists?.compactMap { $0.name }.joined(separator: ", ")
-                        return SearchItem(image: track.album?.images?[0].url ?? "", name: track.name ?? "", description: "Song • \(artists ?? "")")
+                        return SearchItem(id: track.id ?? "", image: track.album?.images?[0].url ?? "", name: track.name ?? "", description: "Song • \(artists ?? "")", type: .track)
                     }
                 }
                 if let albums = response.albums?.items {
                     self.searchItems.value += albums.map { album in
                         let artists = album.artists?.compactMap { $0.name }.joined(separator: ", ")
-                        return SearchItem(image: album.images?[0].url ?? "", name: album.name ?? "", description: "Album • \(artists ?? "")")
+                        return SearchItem(id: album.id ?? "", image: album.images?[0].url ?? "", name: album.name ?? "", description: "Album • \(artists ?? "")", type: .album)
                     }
                 }
                 self.hasMoreData = response.tracks?.items?.isEmpty == false ||  response.albums?.items?.isEmpty == false

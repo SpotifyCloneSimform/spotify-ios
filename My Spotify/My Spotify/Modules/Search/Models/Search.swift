@@ -23,9 +23,11 @@ struct SearchData<T: Codable>: Codable {
 }
 
 struct SearchItem {
+    var id: String
     var image: String
     var name: String
     var description: String
+    var type: ItemType
 }
 
 enum ItemType: String, CaseIterable {
