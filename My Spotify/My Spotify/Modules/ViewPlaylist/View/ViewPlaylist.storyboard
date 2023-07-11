@@ -84,23 +84,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Vm-H1i">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Vm-H1i">
                                                     <rect key="frame" x="10" y="10" width="48" height="71"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="48" id="7if-E7-hcK"/>
                                                         <constraint firstAttribute="height" constant="48" id="gV8-fx-Ftk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="smd-Tv-TkJ">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="smd-Tv-TkJ">
                                                     <rect key="frame" x="78" y="24.333333333333332" width="275" height="42.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-ZB-Q23">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI5-ZB-Q23">
                                                             <rect key="frame" x="0.0" y="0.0" width="275" height="21.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="singer name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-Vj-L3V">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="singer name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-Vj-L3V">
                                                             <rect key="frame" x="0.0" y="25.666666666666671" width="275" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,8 +166,8 @@
                                 <constraint firstAttribute="width" secondItem="gyO-fv-Avq" secondAttribute="height" multiplier="1:1" id="CNU-dC-iUu"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkX-rD-QhV">
-                            <rect key="frame" x="172" y="236.66666666666666" width="49.333333333333343" height="22.999999999999972"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkX-rD-QhV">
+                            <rect key="frame" x="20" y="236.66666666666666" width="353" height="22.999999999999972"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -190,15 +190,16 @@
                     <viewLayoutGuide key="safeArea" id="3ss-sf-J76"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="3ss-sf-J76" firstAttribute="trailing" secondItem="kkX-rD-QhV" secondAttribute="trailing" constant="20" id="0C4-rM-b6o"/>
                         <constraint firstItem="gyO-fv-Avq" firstAttribute="centerX" secondItem="03E-FS-Yw8" secondAttribute="centerX" id="7RY-9p-D2P"/>
                         <constraint firstItem="gyO-fv-Avq" firstAttribute="top" secondItem="03E-FS-Yw8" secondAttribute="top" constant="20" id="G8r-J8-FhE"/>
                         <constraint firstItem="Pp4-sP-sQV" firstAttribute="centerX" secondItem="03E-FS-Yw8" secondAttribute="centerX" id="N70-zF-xLU"/>
                         <constraint firstItem="6oi-c9-Q0G" firstAttribute="centerX" secondItem="03E-FS-Yw8" secondAttribute="centerX" id="Ov3-sC-tyv"/>
-                        <constraint firstItem="kkX-rD-QhV" firstAttribute="centerX" secondItem="03E-FS-Yw8" secondAttribute="centerX" id="Z8O-zT-4Kd"/>
                         <constraint firstItem="kkX-rD-QhV" firstAttribute="top" secondItem="gyO-fv-Avq" secondAttribute="bottom" constant="20" id="ZQR-jx-OYC"/>
                         <constraint firstItem="Pp4-sP-sQV" firstAttribute="top" secondItem="6oi-c9-Q0G" secondAttribute="bottom" constant="16.333333333333314" id="Zfb-yv-wAq"/>
                         <constraint firstItem="gyO-fv-Avq" firstAttribute="width" secondItem="03E-FS-Yw8" secondAttribute="width" multiplier="0.5" id="e6J-GD-OP4"/>
                         <constraint firstItem="6oi-c9-Q0G" firstAttribute="top" secondItem="kkX-rD-QhV" secondAttribute="bottom" constant="10" id="fVj-WV-mtO"/>
+                        <constraint firstItem="kkX-rD-QhV" firstAttribute="leading" secondItem="3ss-sf-J76" secondAttribute="leading" constant="20" id="pUf-NL-wD6"/>
                     </constraints>
                 </view>
             </objects>
@@ -206,6 +207,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="RoundProfile" width="32" height="32"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="DarkGreen">
             <color red="0.094117647058823528" green="0.68235294117647061" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

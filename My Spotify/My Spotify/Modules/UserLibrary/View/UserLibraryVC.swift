@@ -101,6 +101,10 @@ extension UserLibraryVC: UITableViewDelegate {
             coordinator?.gotoViewSongs(songData: libraryDisplayItems[indexPath.section].data[indexPath.row])
         } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.album {
             coordinator?.gotoViewSongs(songData: libraryDisplayItems[indexPath.section].data[indexPath.row])
+        } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.artists {
+            if let id = libraryDisplayItems[indexPath.section].data[indexPath.row].id {
+                coordinator?.goToArtistProfile(artistId: id)
+            }
         }
         
     }
@@ -133,6 +137,7 @@ extension UserLibraryVC: UICollectionViewDelegate {
         } else if (categories[indexPath.row] == LibraryItemType.album.rawValue.capitalized) {
             viewModel.getLibraryAlbum()
         } else if categories[indexPath.row] == LibraryItemType.all.rawValue.capitalized{
+            libraryDisplayItems = []
             viewModel.getAllLibraryData()
         }
     }

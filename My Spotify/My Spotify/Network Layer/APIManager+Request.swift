@@ -25,6 +25,8 @@ enum RequestItemsType: Equatable {
     case checkLike
     case likeTrack
     case dislikeTrack
+    case getArtistTopTracks(id: String)
+    case getRelatedArtists(id: String)
 }
 
 // MARK: Extensions
@@ -39,7 +41,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.baseAuth
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack, .getArtistTopTracks, .getRelatedArtists:
             return AppConstants.baseApi
         }
     }
@@ -48,7 +50,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return AppConstants.api
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack, .getArtistTopTracks, .getRelatedArtists:
             return ""
         }
     }
@@ -57,7 +59,7 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .authToken, .refreshToken:
             return ""
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .likeTrack, .dislikeTrack, .getArtistTopTracks, .getRelatedArtists:
             return AppConstants.apiVersion
         }
     }
@@ -92,12 +94,16 @@ extension RequestItemsType: EndPointType {
             return "me/tracks/contains"
         case .likeTrack, .dislikeTrack:
             return "me/tracks"
+        case .getArtistTopTracks(let id):
+            return "artists/\(id)/top-tracks?market=IN"
+        case .getRelatedArtists(let id):
+            return "artists/\(id)/related-artists"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike:
+        case .getUserPlaylists, .getUserArtists, .getAlbums, .getPlaylistSongs, .getAlbumTracks, .getArtist, .getUserAlbumbs, .getFeaturedPlaylist, .categories, .search, .track, .checkLike, .getRelatedArtists, .getArtistTopTracks:
             return .get
         case .authToken, .refreshToken:
             return .post
@@ -128,3 +134,4 @@ extension RequestItemsType: EndPointType {
     }
     
 }
+

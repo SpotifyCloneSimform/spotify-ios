@@ -26,4 +26,9 @@ class LibraryCoordinator: Coordinator {
         let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
         viewPlaylistCoordinator.start()
     }
+    
+    func  goToArtistProfile(artistId: String) {
+        let viewArtistCoodinator = ViewArtistCoordinator(navigationController: navigationController, artistId: artistId)
+        viewArtistCoodinator.start()
+    }
 }

@@ -20,7 +20,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        KeychainHelper.shared.accessToken == nil ? goToAuth() : goToSearch()
+        KeychainHelper.shared.accessToken == nil ? goToAuth() : goToLibrary()
     }
     
     func goToHome() {
@@ -39,5 +39,11 @@ class AppCoordinator: Coordinator {
         let searchCoordinator = SearchCoordinator(navigationController: navigationController)
         self.window.rootViewController = navigationController
         searchCoordinator.start()
+    }
+    
+    func goToLibrary() {
+        let libraryCoordinator = LibraryCoordinator(navigationController: navigationController)
+        self.window.rootViewController = navigationController
+        libraryCoordinator.start()
     }
 }

@@ -51,8 +51,7 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         if let songData = songData {
             lblOwnerName.text = songData.ownerDisplayName
             lblPlaylistName.text = songData.name
-            imgPlaylist.kf.setImage(with: URL(string: songData.image ?? ""))
-            
+            imgPlaylist.kf.setImage(with: URL(string: songData.image ?? ""), placeholder: UIImage(named: "RoundProfile"))
             if songData.type == LibraryItemType.playlist {
                     tblSongs.tableFooterView = nil
                 viewModel.getPlaylistSong(id: songData.id ?? "")
@@ -73,8 +72,8 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         }
         
         viewModel.albumArtist.bind { [weak self] albumArtist in
-            if let self = self {
-                self.imgArtist.kf.setImage(with: URL(string: albumArtist?.images?[0].url ?? ""))
+            if let self = self, let imgUrl = albumArtist?.images?[0].url {
+                self.imgArtist.kf.setImage(with: URL(string: imgUrl), placeholder: UIImage(named: "RoundProfile"))
                 self.lblArtistName.text = albumArtist?.name
             }
         }
