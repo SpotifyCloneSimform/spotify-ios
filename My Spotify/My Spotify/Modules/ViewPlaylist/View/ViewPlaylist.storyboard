@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gaW-c7-O17">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gaW-c7-O17">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="P94-EA-fTE">
@@ -65,7 +66,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="hoV-lB-0eR" firstAttribute="leading" secondItem="t58-lK-hbH" secondAttribute="leading" id="Bsr-BM-qyT"/>
                                         <constraint firstAttribute="trailing" secondItem="t58-lK-hbH" secondAttribute="trailing" constant="10" id="gQC-Ao-ctY"/>
@@ -83,12 +83,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoundProfile" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Vm-H1i">
-                                                    <rect key="frame" x="10" y="10" width="48" height="71"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Igw-Vm-H1i">
+                                                    <rect key="frame" x="10" y="11" width="48" height="69.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="48" id="7if-E7-hcK"/>
                                                         <constraint firstAttribute="height" constant="48" id="gV8-fx-Ftk"/>
                                                     </constraints>
+                                                    <imageReference key="image" image="music.note" catalog="system" symbolScale="default"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="smd-Tv-TkJ">
                                                     <rect key="frame" x="78" y="24.333333333333332" width="275" height="42.666666666666671"/>
@@ -108,7 +109,6 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Igw-Vm-H1i" firstAttribute="leading" secondItem="goF-F1-bWw" secondAttribute="leading" constant="10" id="1e4-2P-Qw9"/>
                                                 <constraint firstItem="smd-Tv-TkJ" firstAttribute="leading" secondItem="Igw-Vm-H1i" secondAttribute="trailing" constant="20" id="3b4-wd-SYd"/>
@@ -205,7 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RoundProfile" width="32" height="32"/>
+        <image name="music.note" catalog="system" width="96" height="128"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="DarkGreen">
             <color red="0.094117647058823528" green="0.68235294117647061" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

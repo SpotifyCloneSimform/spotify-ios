@@ -25,6 +25,7 @@ class ArtistProfileVC: UIViewController, Storyboarded {
     private let viewModel = ArtistProfileViewModel()
     private var artistTopTracks: ArtistTopTracks? = nil
     private var relatedArtist: RelatedArtists? = nil
+    var songs: DisplaySong = DisplaySong(type: nil, data: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +57,18 @@ class ArtistProfileVC: UIViewController, Storyboarded {
         viewModel.artistTopTracks.bind { [weak self] topTracks in
             if let self = self {
                 self.artistTopTracks = topTracks
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.tblTopTracks.reloadData()
                     self.aiLoading.stopAnimating()
                 }
+                
+                var songData = topTracks?.tracks?.map({ item in
+                    let artists = item.album?.artists?.compactMap { $0.name }.joined(separator: ", ")
+                    return DisplaySongData(songName: item.name, artistsName: artists, image: item.album?.images?.first?.url, id: item.id, songDuration: item.durationMs)
+                }) ?? []
+                self.songs.type = .artists
+                self.songs.data = songData as? [DisplaySongData]
+                self.coordinator?.songs = self.songs
             }
         }
         
@@ -89,6 +98,13 @@ extension ArtistProfileVC: UITableViewDataSource {
         cell.configureCell(songName: artistTopTracks?.tracks?[indexPath.row].name ?? "N/A" ,imgUrl: artistTopTracks?.tracks?[indexPath.row].album?.images?.first?.url ?? "N/A")
         return cell
         
+    }
+}
+
+// MARK: - Tableview delegate
+extension ArtistProfileVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.goToViewSong(currentSong: indexPath.row)
     }
 }
 

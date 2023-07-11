@@ -8,15 +8,17 @@
 import Foundation
 
 struct DisplaySong {
-    let type: LibraryItemType?
-    let data: [DisplaySongData]?
+    var type: LibraryItemType?
+    var data: [DisplaySongData]?
 }
-
 struct DisplaySongData {
     let songName: String?
     let artistsName: String?
     let image: String?
     var id: String? = nil
+    var songDuration: Int? = nil
+    var title: String? = nil
+    var subTitle: String? = nil
 }
 
 struct DisplayAlbumFooterView {

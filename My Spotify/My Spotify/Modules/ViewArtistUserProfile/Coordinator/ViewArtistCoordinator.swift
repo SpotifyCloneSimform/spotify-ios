@@ -13,6 +13,7 @@ class ViewArtistCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var artistId: String
+    var songs: DisplaySong = DisplaySong(type: nil, data: [])
     
     init(navigationController: UINavigationController, artistId: String) {
         self.navigationController = navigationController
@@ -29,5 +30,11 @@ class ViewArtistCoordinator: Coordinator {
     func viewArtist(id: String) {
         let viewArtistCoodinator = ViewArtistCoordinator(navigationController: navigationController, artistId: id)
         viewArtistCoodinator.start()
+    }
+    
+    
+    func goToViewSong(currentSong: Int) {
+        let viewSongCoordinator = ViewSongCoordinator(navigationController: navigationController, songs: songs, currentSong: currentSong)
+        viewSongCoordinator.start()
     }
 }

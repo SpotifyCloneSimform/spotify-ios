@@ -25,7 +25,7 @@ class ViewSongsViewModel {
                 
                 let songsData = songs.tracks?.items?.map { item in
                     let artists = item.track?.artists?.compactMap { $0.name }.joined(separator: ", ")
-                    return DisplaySongData(songName: item.track?.name, artistsName: artists, image: item.track?.album?.images?.first?.url)
+                    return DisplaySongData(songName: item.track?.name, artistsName: artists, image: item.track?.album?.images?.first?.url, id: item.track?.id, songDuration: item.track?.durationMs, title: "Playing From Playlist", subTitle: songs.name)
                 }
                 self.songs.value = DisplaySong(type: .playlist, data: songsData)
                 
@@ -46,7 +46,7 @@ class ViewSongsViewModel {
                 self.delegate?.getAdditionalInfo(footerDetails: DisplayAlbumFooterView(artistId: albumSongs.artists?[0].id ?? "", releaseDate: albumSongs.releaseDate ?? "", totalSongs: albumSongs.totalTracks ?? 0, copyRight: albumSongs.copyrights?.first?.text ?? ""))
                 let songData = albumSongs.tracks?.items?.map { item in
                     let artists = item.artists?.compactMap { $0.name }.joined(separator: ", ")
-                    return DisplaySongData(songName: item.name, artistsName: artists, image: "", id: albumSongs.id)
+                    return DisplaySongData(songName: item.name, artistsName: artists, image: albumSongs.images?.first?.url, id: item.id, title: "Playing From Album", subTitle: albumSongs.name)
                 }
                 self.songs.value = DisplaySong(type: .album, data: songData)
                 

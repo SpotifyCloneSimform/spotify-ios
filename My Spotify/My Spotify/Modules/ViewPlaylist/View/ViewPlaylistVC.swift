@@ -53,7 +53,7 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
             lblPlaylistName.text = songData.name
             imgPlaylist.kf.setImage(with: URL(string: songData.image ?? ""), placeholder: UIImage(named: "RoundProfile"))
             if songData.type == LibraryItemType.playlist {
-                    tblSongs.tableFooterView = nil
+                tblSongs.tableFooterView = nil
                 viewModel.getPlaylistSong(id: songData.id ?? "")
             } else if songData.type == LibraryItemType.album {
                 viewModel.delegate = self
@@ -67,6 +67,7 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         viewModel.songs.bind { [weak self] songs in
             if let sSelf = self, let songs = songs {
                 sSelf.songs = songs
+                sSelf.coordinator?.songs = sSelf.songs
                 sSelf.tblSongs.reloadData()
             }
         }
@@ -110,4 +111,13 @@ extension ViewPlaylistVC: UITableViewDataSource {
             return UITableViewCell()
         }
     }
+}
+
+// MARK: - Tableview Delegate
+extension ViewPlaylistVC: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.goToViewSong(currentSong: indexPath.row)
+    }
+    
 }

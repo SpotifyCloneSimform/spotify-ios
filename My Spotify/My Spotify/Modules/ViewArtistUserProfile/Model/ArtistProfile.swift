@@ -22,9 +22,10 @@ struct ArtistTopTracks: Codable {
     let tracks: [ArtistTopTracksData]?
 }
 
-struct ArtistTopTracksData: Codable{
+struct ArtistTopTracksData: Codable {
     let album: AlbumSong?
     let artist: [SongArtists]?
+    let durationMs: Int?
     let id: String?
     let name: String?
 }
