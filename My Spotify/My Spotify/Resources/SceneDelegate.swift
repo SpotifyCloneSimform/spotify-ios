@@ -18,10 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         guard let window = window else { return }
-        var navigationController =  UINavigationController()
-        navigationController.navigationBar.tintColor = .clear
+        let navigationController =  UINavigationController()
+        setupAppearance()
+        navigationController.isNavigationBarHidden = true
         appCoordinator = AppCoordinator(navigationController: navigationController, window: window)
         appCoordinator?.start()
+        window.overrideUserInterfaceStyle = .dark
         window.makeKeyAndVisible()
     }
     
@@ -62,6 +64,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func handleUrl(_ url: URL) {
         appCoordinator?.goToAuth(with: url.valueOf("code"))
     }
-
+    
+    private func setupAppearance() {
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.backgroundColor = .black
+        standardAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        standardAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = standardAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = standardAppearance
+        UINavigationBar.appearance().prefersLargeTitles = true
+        
+        let bottomAppearance = UITabBarAppearance()
+        bottomAppearance.backgroundColor = .black
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().standardAppearance = bottomAppearance
+        UITabBar.appearance().scrollEdgeAppearance = bottomAppearance
+    }
 }
 

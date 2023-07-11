@@ -19,6 +19,11 @@ class SearchHistoryVC: UIViewController, Storyboarded {
     var searchCoordinator: SearchCoordinator?
     var cancellable = [AnyCancellable]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
