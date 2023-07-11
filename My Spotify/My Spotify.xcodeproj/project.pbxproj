@@ -96,6 +96,7 @@
 		E8D6D4D22A5537C500D2D965 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D12A5537C500D2D965 /* AppConstants.swift */; };
 		E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D42A55469700D2D965 /* AuthModel.swift */; };
 		E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */; };
+		E8DF72C42A5D28E5001726DF /* CombineCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF72C32A5D28E5001726DF /* CombineCoordinator.swift */; };
 		E8E3BE042A5D0EF6006F70FF /* SearchCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3BE032A5D0EF6006F70FF /* SearchCategoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +194,7 @@
 		E8D6D4D12A5537C500D2D965 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E8D6D4D42A55469700D2D965 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extentions.swift"; sourceTree = "<group>"; };
+		E8DF72C32A5D28E5001726DF /* CombineCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCoordinator.swift; sourceTree = "<group>"; };
 		E8E3BE032A5D0EF6006F70FF /* SearchCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -580,6 +582,7 @@
 				E8B3761E2A53F9A0006107FD /* Storyboarded.swift */,
 				E8C38E362A56BCF6004CE02F /* SearchCoordinator.swift */,
 				E8C38E5C2A584045004CE02F /* TrackOptionsCoordinator.swift */,
+				E8DF72C32A5D28E5001726DF /* CombineCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				E8C38E372A56BCF6004CE02F /* SearchCoordinator.swift in Sources */,
 				E8C38E3B2A56C0AC004CE02F /* Category.swift in Sources */,
 				E8C38E412A56E210004CE02F /* UIColor+extentions.swift in Sources */,
+				E8DF72C42A5D28E5001726DF /* CombineCoordinator.swift in Sources */,
 				E8C38E532A57D0C1004CE02F /* Common.swift in Sources */,
 				E8E3BE042A5D0EF6006F70FF /* SearchCategoryCell.swift in Sources */,
 				E8B3761F2A53F9A0006107FD /* Storyboarded.swift in Sources */,

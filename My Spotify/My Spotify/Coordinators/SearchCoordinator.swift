@@ -26,6 +26,7 @@ class SearchCoordinator: Coordinator {
     func goToSearchScreen() {
         let vc = SearchHistoryVC.instantiate(from: .search)
         vc.searchCoordinator = self
+        vc.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(vc, animated: true)
     }
     

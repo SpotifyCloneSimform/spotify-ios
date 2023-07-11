@@ -20,30 +20,18 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        KeychainHelper.shared.accessToken == nil ? goToAuth() : goToLibrary()
+        KeychainHelper.shared.accessToken == nil ? goToAuth() : goToCombineScreen()
     }
     
-    func goToHome() {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+    func goToCombineScreen() {
+        let combineCoordinator = CombineCoordinator(navigationController: navigationController)
         self.window.rootViewController = navigationController
-        homeCoordinator.start()
+        combineCoordinator.start()
     }
     
     func goToAuth(with code: String? = nil) {
         let authCoordinator = AuthCoordinator(navigationController: navigationController, with: code)
         self.window.rootViewController = navigationController
         authCoordinator.start()
-    }
-    
-    func goToSearch() {
-        let searchCoordinator = SearchCoordinator(navigationController: navigationController)
-        self.window.rootViewController = navigationController
-        searchCoordinator.start()
-    }
-    
-    func goToLibrary() {
-        let libraryCoordinator = LibraryCoordinator(navigationController: navigationController)
-        self.window.rootViewController = navigationController
-        libraryCoordinator.start()
     }
 }
