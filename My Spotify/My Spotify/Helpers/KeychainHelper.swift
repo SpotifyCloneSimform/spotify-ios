@@ -48,7 +48,13 @@ class KeychainHelper {
     }
     
     // MARK: - Methods
-    func clearData() {
+    func clearData(keys: [KeychainWrapper.Key]) {
+        keys.forEach { key in
+            keychain.remove(forKey: key)
+        }
+    }
+    
+    func clearAllData() {
         keychain.removeAllKeys()
     }
 }
