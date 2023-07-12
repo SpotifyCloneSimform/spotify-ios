@@ -11,7 +11,6 @@ struct CategoriesResponse: Codable {
 }
 
 struct Categories: Codable {
-    
     var herf: String?
     var items: [Category]?
     var limit: Int?
@@ -22,7 +21,6 @@ struct Categories: Codable {
 }
 
 struct Category: Codable {
-    
     var herf: String?
     var icons: [Icon]?
     var id: String?
@@ -30,8 +28,12 @@ struct Category: Codable {
 }
 
 struct Icon: Codable {
-    
     var height: Int?
     var width: Int?
     var url: String?
+}
+
+struct CategoryPlaylists: Codable {
+    let message: String?
+    let playlists: DataItems<Playlist?>?
 }

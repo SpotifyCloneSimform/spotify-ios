@@ -33,6 +33,7 @@
                     <constraint firstAttribute="bottom" secondItem="wP9-fM-M7D" secondAttribute="bottom" constant="10" id="Fha-U3-Bhv"/>
                     <constraint firstItem="sOd-b5-ljd" firstAttribute="leading" secondItem="wP9-fM-M7D" secondAttribute="trailing" constant="25" id="WK2-Oy-Rv3"/>
                     <constraint firstItem="sOd-b5-ljd" firstAttribute="centerY" secondItem="wP9-fM-M7D" secondAttribute="centerY" id="eq9-I9-Rnv"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sOd-b5-ljd" secondAttribute="trailing" constant="16" id="qEh-Zs-mSv"/>
                     <constraint firstItem="wP9-fM-M7D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xYJ-Hn-cSy"/>
                     <constraint firstItem="wP9-fM-M7D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xhX-d5-A9U"/>
                 </constraints>
@@ -43,7 +44,7 @@
                 <outlet property="imgArtists" destination="wP9-fM-M7D" id="NVk-H5-bnM"/>
                 <outlet property="lblArtistsName" destination="sOd-b5-ljd" id="VPc-6m-ZtJ"/>
             </connections>
-            <point key="canvasLocation" x="145.03816793893128" y="6.6901408450704229"/>
+            <point key="canvasLocation" x="143.5114503816794" y="6.6901408450704229"/>
         </tableViewCell>
     </objects>
 </document>

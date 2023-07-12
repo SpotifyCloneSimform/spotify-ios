@@ -59,7 +59,6 @@ class SearchHistoryViewModel {
                 self.setupNextPage()
             case .failure(let error):
                 self.errorMessage.value = error.body
-                break
             }
         }
     }

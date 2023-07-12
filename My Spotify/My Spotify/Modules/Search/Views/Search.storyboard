@@ -230,6 +230,40 @@
             </objects>
             <point key="canvasLocation" x="1824" y="-27"/>
         </scene>
+        <!--Category PlaylistVC-->
+        <scene sceneID="YlO-nk-vkA">
+            <objects>
+                <viewController storyboardIdentifier="CategoryPlaylistVC" id="aRE-Xz-26M" customClass="CategoryPlaylistVC" customModule="My_Spotify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h72-a1-ZqS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-3B-IGE">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aRE-Xz-26M" id="Kv2-2S-eUi"/>
+                                    <outlet property="delegate" destination="aRE-Xz-26M" id="Ef4-Ed-fLi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fas-4w-LUp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fas-4w-LUp" firstAttribute="bottom" secondItem="R2J-3B-IGE" secondAttribute="bottom" id="ErI-JK-njt"/>
+                            <constraint firstItem="Fas-4w-LUp" firstAttribute="trailing" secondItem="R2J-3B-IGE" secondAttribute="trailing" id="hfA-z9-cSe"/>
+                            <constraint firstItem="R2J-3B-IGE" firstAttribute="top" secondItem="Fas-4w-LUp" secondAttribute="top" id="xd0-FX-1bN"/>
+                            <constraint firstItem="R2J-3B-IGE" firstAttribute="leading" secondItem="Fas-4w-LUp" secondAttribute="leading" id="ygv-I9-ooa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblPlaylist" destination="R2J-3B-IGE" id="Z5S-Cc-VSI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZX-9F-bp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="-27"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
