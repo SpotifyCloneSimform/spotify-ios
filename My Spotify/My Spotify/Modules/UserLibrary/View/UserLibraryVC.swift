@@ -29,11 +29,12 @@ class UserLibraryVC: UIViewController, Storyboarded {
     private func setupUI() {
         viewModel.getAllLibraryData()
         tblLibraryPlaylist.register(UINib(nibName: "LibraryArtistsCell", bundle: nil), forCellReuseIdentifier: "LibraryArtistsCell")
+        clvCategory.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
     }
     
     private func bindViewModel() {
         
-        viewModel.libraryInitalItems.bind { [weak self] libraryDisplayItems in
+        viewModel.libraryItems.bind { [weak self] libraryDisplayItems in
             
             if let sSelf = self {
                 sSelf.aiLoading.startAnimating()
@@ -148,7 +149,7 @@ extension UserLibraryVC: UICollectionViewDelegate {
 extension UserLibraryVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.bounds.width / 3 - 15, height: 40)
+        CGSize(width: view.bounds.width / 3 - 30, height: 40)
     }
     
 }

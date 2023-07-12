@@ -22,20 +22,11 @@ struct Item: Codable {
     let images: [Image]?
     let name: String?
     let owner: Owner?
-    let primaryColor: String? = nil
+    var primaryColor: String? = nil
     let itemPublic: Bool?
     let snapshotID: String?
     let tracks: Tracks?
     let type, uri: String?
-
-    enum CodingKeys: String, CodingKey {
-        case collaborative, description
-        case href, id, images, name, owner
-        case primaryColor = "primary_color"
-        case itemPublic = "public"
-        case snapshotID = "snapshot_id"
-        case tracks, type, uri
-    }
 }
 
 // MARK: - Owner
@@ -44,12 +35,6 @@ struct Owner: Codable {
     let externalUrls: ExternalUrls?
     let href: String?
     let id, type, uri: String?
-
-    enum CodingKeys: String, CodingKey {
-        case displayName = "display_name"
-        case externalUrls = "external_urls"
-        case href, id, type, uri
-    }
 }
 
 // MARK: - Tracks

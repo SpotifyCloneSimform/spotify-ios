@@ -27,6 +27,11 @@ class ArtistProfileVC: UIViewController, Storyboarded {
     private var relatedArtist: RelatedArtists? = nil
     var songs: DisplaySong = DisplaySong(type: nil, data: [])
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -62,7 +67,7 @@ class ArtistProfileVC: UIViewController, Storyboarded {
                     self.aiLoading.stopAnimating()
                 }
                 
-                var songData = topTracks?.tracks?.map({ item in
+                let songData = topTracks?.tracks?.map({ item in
                     let artists = item.album?.artists?.compactMap { $0.name }.joined(separator: ", ")
                     return DisplaySongData(songName: item.name, artistsName: artists, image: item.album?.images?.first?.url, id: item.id, songDuration: item.durationMs)
                 }) ?? []
@@ -120,6 +125,7 @@ extension ArtistProfileVC: UICollectionViewDataSource {
         }
         
         cell.configureCell(image: relatedArtist?.artists?[indexPath.row].images?.first?.url ?? "", name: relatedArtist?.artists?[indexPath.row].name ?? "")
+        collectionView.layoutIfNeeded()
         return cell
     }
     
@@ -128,13 +134,15 @@ extension ArtistProfileVC: UICollectionViewDataSource {
             coordinator?.viewArtist(id: id)
         }
     }
+    
+    
 }
 
 // MARK: - Collection view delegate
 extension ArtistProfileVC: UICollectionViewDelegateFlowLayout {
-    
+  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: view.bounds.width / 2 - 30, height: view.bounds.height / 4)
+        CGSize(width: view.bounds.width / 2 - 30, height: collectionView.bounds.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

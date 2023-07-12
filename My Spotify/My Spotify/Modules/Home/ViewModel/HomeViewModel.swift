@@ -21,7 +21,7 @@ class HomeViewModel {
             switch result {
             case .success(let playlists):
                 let data = playlists.items?.map({ item in
-                    HomeDisplayData(name: item.name, image: item.images?[0].url, url: item.uri)
+                    HomeDisplayData(name: item.name, image: item.images?.first?.url, url: item.uri, ownerName: item.owner?.displayName, id: item.id, type: .playlist)
                 })
                 self?.getAllData.value.append(HomeDisplay(sectionName: "Your Playlist", data: data))
                 self?.getAllData.fire()
@@ -37,7 +37,7 @@ class HomeViewModel {
             switch result {
             case .success(let albumbs):
                 let data = albumbs.items?.map({ item in
-                    HomeDisplayData(name: item.name, image: item.album?.images?[0].url, url: item.uri)
+                    HomeDisplayData(name: item.name, image: item.album?.images?.first?.url, url: item.uri, ownerName: item.artists?.first?.name, id: item.album?.id, type: .album)
                 })
                 self?.getAllData.value.append(HomeDisplay(sectionName: "Your Songs", data: data))
                 self?.getAllData.fire()
@@ -53,7 +53,7 @@ class HomeViewModel {
             switch result {
             case .success(let featuredPlaylist):
                 let data = featuredPlaylist.playlists?.items?.map({ item in
-                    HomeDisplayData(name: item.name, image: item.images?[0].url, url: item.uri)
+                    HomeDisplayData(name: item.name, image: item.images?.first?.url, url: item.uri, ownerName: item.owner?.displayName, id: item.id, type: .playlist)
                 })
                 self?.getAllData.value.append(HomeDisplay(sectionName: "Featured Playlist", data: data))
                 self?.getAllData.fire()

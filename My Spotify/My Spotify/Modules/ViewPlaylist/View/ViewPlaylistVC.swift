@@ -18,12 +18,12 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         viewModel.getArtist(id: artistId)
     }
 
-    
     // MARK: - Outlets
     @IBOutlet private weak var lblOwnerName: UILabel!
     @IBOutlet private weak var lblPlaylistName: UILabel!
     @IBOutlet private weak var tblSongs: UITableView!
-    @IBOutlet private var headerView: UIView!
+    @IBOutlet private weak var headerView: UIView!
+    @IBOutlet private weak var aiLoading: UIActivityIndicatorView!
     @IBOutlet private weak var imgPlaylist: UIImageView!
     @IBOutlet private weak var lblSongCount: UILabel!
     @IBOutlet private weak var lblArtistName: UILabel!
@@ -38,6 +38,11 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
     var songs: DisplaySong = DisplaySong(type: nil, data: [])
     var artistId = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -45,6 +50,7 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
     }
     
     private func setUpUI() {
+        aiLoading.startAnimating()
         imgArtist.layer.cornerRadius = imgArtist.bounds.width / 2
         tblSongs.tableHeaderView = headerView
         tblSongs.register(UINib(nibName: "AlbumSongCell", bundle: nil), forCellReuseIdentifier: "AlbumSongCell")
@@ -69,6 +75,7 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
                 sSelf.songs = songs
                 sSelf.coordinator?.songs = sSelf.songs
                 sSelf.tblSongs.reloadData()
+                sSelf.aiLoading.stopAnimating()
             }
         }
         

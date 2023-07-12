@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o3E-LM-X3b">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="TbZ-A5-Cuz">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="93"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,17 +42,17 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-Zz-ciM">
-                                                                <rect key="frame" x="10" y="10" width="101" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="121" height="51"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Category"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Category"/>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="Wff-Zz-ciM" secondAttribute="bottom" constant="10" id="gzI-QC-Tay"/>
-                                                            <constraint firstItem="Wff-Zz-ciM" firstAttribute="top" secondItem="OZo-pC-3a9" secondAttribute="top" constant="10" id="mEw-by-qoZ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Wff-Zz-ciM" secondAttribute="trailing" constant="10" id="ogb-YZ-DA4"/>
-                                                            <constraint firstItem="Wff-Zz-ciM" firstAttribute="leading" secondItem="OZo-pC-3a9" secondAttribute="leading" constant="10" id="xfK-Ur-d8m"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Wff-Zz-ciM" secondAttribute="bottom" id="gzI-QC-Tay"/>
+                                                            <constraint firstItem="Wff-Zz-ciM" firstAttribute="top" secondItem="OZo-pC-3a9" secondAttribute="top" id="mEw-by-qoZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Wff-Zz-ciM" secondAttribute="trailing" id="ogb-YZ-DA4"/>
+                                                            <constraint firstItem="Wff-Zz-ciM" firstAttribute="leading" secondItem="OZo-pC-3a9" secondAttribute="leading" id="xfK-Ur-d8m"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +68,7 @@
                                             </connections>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="rt5-Ap-oMi" firstAttribute="top" secondItem="TbZ-A5-Cuz" secondAttribute="top" id="H5F-fj-QY7"/>
                                         <constraint firstAttribute="trailing" secondItem="rt5-Ap-oMi" secondAttribute="trailing" id="P5v-Dx-bgW"/>
@@ -77,7 +77,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LibraryCell" rowHeight="96" id="ua7-iB-sQZ" customClass="LibraryCell" customModule="My_Spotify" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LibraryCell" rowHeight="96" id="ua7-iB-sQZ" customClass="LibraryCell" customModule="My_Spotify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="143" width="393" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ua7-iB-sQZ" id="g27-Xq-erK">
@@ -116,7 +116,7 @@
                                                 <constraint firstItem="rMQ-8U-gyz" firstAttribute="top" secondItem="g27-Xq-erK" secondAttribute="top" constant="10" id="veT-is-Ubj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imgPlaylist" destination="rMQ-8U-gyz" id="vyA-J6-EeP"/>
                                             <outlet property="lblPlaylistName" destination="9um-4N-38c" id="BYf-0B-In8"/>
@@ -135,6 +135,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="o3E-LM-X3b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Bbi-fE-MMK"/>
                             <constraint firstAttribute="bottom" secondItem="o3E-LM-X3b" secondAttribute="bottom" id="Rcd-W7-mZZ"/>
