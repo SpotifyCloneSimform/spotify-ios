@@ -19,11 +19,10 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-NA-lLz">
                         <rect key="frame" x="20.000000000000004" y="10" width="51.333333333333343" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="XCQ-NA-lLz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZtJ-QO-Jzv"/>
                     <constraint firstItem="XCQ-NA-lLz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zbO-OP-UPi"/>
@@ -33,7 +32,7 @@
             <connections>
                 <outlet property="lblHeaderTitle" destination="XCQ-NA-lLz" id="lTv-P1-9KC"/>
             </connections>
-            <point key="canvasLocation" x="131" y="-11"/>
+            <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
         </tableViewCell>
     </objects>
 </document>
