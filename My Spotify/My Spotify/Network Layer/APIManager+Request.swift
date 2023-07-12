@@ -69,7 +69,7 @@ extension RequestItemsType: EndPointType {
         case .authToken, .refreshToken:
             return "token"
         case .getUserPlaylists:
-            return "me/playlists"
+            return "me/playlists?limit=50"
         case .getUserAlbumbs:
             return "me/top/tracks"
         case .getFeaturedPlaylist:

@@ -22,4 +22,11 @@ class HomeCoordinator: Coordinator {
         vc.homeCoordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    
+    func gotoViewSongs(songData: LibraryDisplay) {
+        let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
+        viewPlaylistCoordinator.start()
+    }
+    
 }

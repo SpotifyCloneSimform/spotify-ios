@@ -15,4 +15,7 @@ struct HomeDisplayData {
     let name: String?
     let image: String?
     let url: String?
+    let ownerName: String?
+    let id: String?
+    let type: LibraryItemType?
 }

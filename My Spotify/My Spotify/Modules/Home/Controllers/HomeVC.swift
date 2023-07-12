@@ -29,6 +29,8 @@ class HomeVC: UIViewController, Storyboarded {
         viewModel.getAlbumbs()
         viewModel.getFeaturedPlaylist()
         tblHome.register(UINib(nibName: "TVHomeHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "TVHomeHeader")
+        tblHome.setContentOffset(CGPoint(x: 0, y: -1), animated: false)
+        
     }
     
     
@@ -36,9 +38,9 @@ class HomeVC: UIViewController, Storyboarded {
         viewModel.getAllData.bind { [weak self] homeItems in
             guard let self = self else { return }
             
-                self.homeItems = []
-                self.homeItems = homeItems
-                self.tblHome.reloadData()
+            self.homeItems = homeItems
+            self.tblHome.layoutIfNeeded()
+            self.tblHome.reloadData()
             
         }
     }
@@ -64,7 +66,11 @@ extension HomeVC: UITableViewDataSource {
         if let data = homeItems[indexPath.section].data {
             cell.items = data
             cell.clvPlaylist.reloadData()
+            cell.onClick = { [weak self] data in
+                self?.homeCoordinator?.gotoViewSongs(songData: data)
+            }
         }
+        cell.clvPlaylist.layoutIfNeeded()
         return cell
         
     }
@@ -74,7 +80,7 @@ extension HomeVC: UITableViewDataSource {
 extension HomeVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.bounds.height / 3
+        tableView.bounds.height / 3 + 35
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
