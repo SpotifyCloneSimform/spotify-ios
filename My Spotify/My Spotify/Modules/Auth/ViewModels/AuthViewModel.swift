@@ -14,6 +14,7 @@ class AuthViewModel {
     let errorMessage = Dynamic<String>("")
     let authTokenSuccess = Dynamic<Void>(())
     let isLoading = Dynamic<Bool>(false)
+    let loginSuccess = Dynamic<Void>(())
     
     // MARK: - Methods
     func generateAuthCode() {
@@ -50,6 +51,22 @@ class AuthViewModel {
                 KeychainHelper.shared.accessToken = response.accessToken
                 KeychainHelper.shared.refreshToken = response.refreshToken
                 KeychainHelper.shared.expiryTime = response.expiresIn
+                self.getUserProfile()
+            case .failure(let error):
+                self.errorMessage.value = error.localizedDescription
+            }
+            self.isLoading.value = false
+        }
+    }
+    
+    private func getUserProfile() {
+        APIManager.shared.call(type: .authenticatedUserProfile) { [weak self] (result: Result<UserProfile, CustomError>) in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let response):
+                KeychainHelper.shared.userId = response.id
+                self.loginSuccess.fire()
             case .failure(let error):
                 self.errorMessage.value = error.localizedDescription
             }

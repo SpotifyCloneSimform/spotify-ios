@@ -21,6 +21,7 @@ class AuthVC: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        bindLogin()
         setupUI()
     }
     
@@ -33,6 +34,12 @@ class AuthVC: UIViewController, Storyboarded {
         authViewModel.isLoading.bind { [weak self] isLoading in
             guard let self = self else { return }
             isLoading ? self.progressIndicator.startAnimating() : self.progressIndicator.stopAnimating()
+        }
+    }
+    
+    private func bindLogin() {
+        authViewModel.loginSuccess.bind { [weak self] in
+            self?.authCoordinator?.goToCombineScreen()
         }
     }
     

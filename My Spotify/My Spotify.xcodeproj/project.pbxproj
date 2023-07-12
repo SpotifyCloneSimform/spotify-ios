@@ -102,6 +102,7 @@
 		E8D6D4D52A55469700D2D965 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D42A55469700D2D965 /* AuthModel.swift */; };
 		E8D6D4D72A554D3A00D2D965 /* URL+extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */; };
 		E8DF72C42A5D28E5001726DF /* CombineCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF72C32A5D28E5001726DF /* CombineCoordinator.swift */; };
+		E8DF72D02A5D6EDB001726DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DF72CF2A5D6EDB001726DF /* User.swift */; };
 		E8E3BE042A5D0EF6006F70FF /* SearchCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E3BE032A5D0EF6006F70FF /* SearchCategoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -205,6 +206,7 @@
 		E8D6D4D42A55469700D2D965 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		E8D6D4D62A554D3A00D2D965 /* URL+extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extentions.swift"; sourceTree = "<group>"; };
 		E8DF72C32A5D28E5001726DF /* CombineCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCoordinator.swift; sourceTree = "<group>"; };
+		E8DF72CF2A5D6EDB001726DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8E3BE032A5D0EF6006F70FF /* SearchCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -696,6 +698,7 @@
 				E8C38E4E2A57CF74004CE02F /* Track.swift */,
 				E8C38E522A57D0C1004CE02F /* Common.swift */,
 				2361F4542A5D2558006932F9 /* Artist.swift */,
+				E8DF72CF2A5D6EDB001726DF /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 				2395AF402A55360C0003B93B /* HomePlaylist.swift in Sources */,
 				E8B376022A53F6BE006107FD /* SceneDelegate.swift in Sources */,
 				E8C38E432A56F211004CE02F /* SearchHistoryVC.swift in Sources */,
+				E8DF72D02A5D6EDB001726DF /* User.swift in Sources */,
 				230271C52A541BA4006F09BF /* APIManager+Request.swift in Sources */,
 				E8D6D4CC2A5533E000D2D965 /* AuthViewModel.swift in Sources */,
 				2395AF492A5573090003B93B /* HomeDisplayData.swift in Sources */,
