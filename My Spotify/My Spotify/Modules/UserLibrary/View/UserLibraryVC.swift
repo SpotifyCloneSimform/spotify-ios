@@ -78,7 +78,7 @@ extension UserLibraryVC: UITableViewDataSource {
             }
             cell.configureCell(data: libraryDisplayItems[indexPath.section].data[indexPath.row])
             return cell
-        } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.album {
+        } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.album || libraryDisplayItems[indexPath.section].type == LibraryItemType.podcast {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LibraryCell", for: indexPath) as? LibraryCell else {
                 return UITableViewCell()
             }
@@ -106,8 +106,9 @@ extension UserLibraryVC: UITableViewDelegate {
             if let id = libraryDisplayItems[indexPath.section].data[indexPath.row].id {
                 coordinator?.goToArtistProfile(artistId: id)
             }
+        } else if libraryDisplayItems[indexPath.section].type == LibraryItemType.podcast {
+            coordinator?.goToViewShows(show: libraryDisplayItems[indexPath.section].data[indexPath.row])
         }
-        
     }
 }
 
@@ -137,9 +138,11 @@ extension UserLibraryVC: UICollectionViewDelegate {
             viewModel.getLibraryArtists()
         } else if (categories[indexPath.row] == LibraryItemType.album.rawValue.capitalized) {
             viewModel.getLibraryAlbum()
-        } else if categories[indexPath.row] == LibraryItemType.all.rawValue.capitalized{
+        } else if categories[indexPath.row] == LibraryItemType.all.rawValue.capitalized {
             libraryDisplayItems = []
             viewModel.getAllLibraryData()
+        } else if categories[indexPath.row] == LibraryItemType.podcast.rawValue.capitalized {
+            viewModel.getUserPodcasts()
         }
     }
     

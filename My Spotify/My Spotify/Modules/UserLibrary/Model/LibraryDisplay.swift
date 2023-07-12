@@ -12,6 +12,7 @@ struct LibraryDisplay {
     let image: String?
     let type: LibraryItemType
     let id: String?
+    var description: String = ""
 }
 
 enum LibraryItemType: String {
