@@ -5,8 +5,6 @@
 //  Created by Devarsh Bhalara on 07/07/23.
 //
 
-import Foundation
-
 struct AlbumArtist: Codable {
     let followers: ArtistFollowers?
     let images: [AlbumArtistImage]?

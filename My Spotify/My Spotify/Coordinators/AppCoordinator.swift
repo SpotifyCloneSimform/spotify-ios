@@ -26,7 +26,6 @@ class AppCoordinator: Coordinator {
     func goToCombineScreen() {
         let combineCoordinator = CombineCoordinator(navigationController: navigationController)
         self.window.rootViewController = navigationController
-        KeychainHelper.shared.accessToken = KeychainHelper.shared.accessToken! + "x"
         combineCoordinator.start()
     }
     

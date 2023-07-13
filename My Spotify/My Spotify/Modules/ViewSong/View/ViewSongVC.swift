@@ -59,32 +59,13 @@ class ViewSongVC: UIViewController, Storyboarded {
             }
         }
         
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(skipToPrevious))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(skipToPrevious))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
         
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(skipToNext))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(skipToNext))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
-    }
-    
-    @objc func skipToNext() {
-        if let currentSong = currentSong, let totalSongs = songs?.data?.count {
-            if (currentSong + 1) < totalSongs {
-                let randomInt = Int.random(in: 0...totalSongs)
-                self.currentSong = btnSuffle.isSelected ? randomInt : currentSong + 1
-                setUpUI()
-            }
-        }
-    }
-    
-    @objc func skipToPrevious() {
-        if let currentSong = currentSong {
-            if (currentSong - 1) >= 0 {
-                self.currentSong = currentSong - 1
-                setUpUI()
-            }
-        }
     }
     
     private func bindViewModel() {
@@ -113,6 +94,29 @@ class ViewSongVC: UIViewController, Storyboarded {
                                                 toastGravity: .bottom, toastCornerRadius: 8, pulseEffect: false)
             }
             
+        }
+        
+        viewModel.errorMessage.bind { [weak self] message in
+            self?.showAlert(title: message)
+        }
+    }
+    
+    @objc func skipToNext() {
+        if let currentSong = currentSong, let totalSongs = songs?.data?.count {
+            if (currentSong + 1) < totalSongs {
+                let randomInt = Int.random(in: 0...totalSongs)
+                self.currentSong = btnSuffle.isSelected ? randomInt : currentSong + 1
+                setUpUI()
+            }
+        }
+    }
+    
+    @objc func skipToPrevious() {
+        if let currentSong = currentSong {
+            if (currentSong - 1) >= 0 {
+                self.currentSong = currentSong - 1
+                setUpUI()
+            }
         }
     }
     
