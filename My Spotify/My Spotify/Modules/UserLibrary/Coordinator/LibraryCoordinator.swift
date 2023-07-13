@@ -31,4 +31,9 @@ class LibraryCoordinator: Coordinator {
         let viewArtistCoodinator = ViewArtistCoordinator(navigationController: navigationController, artistId: artistId)
         viewArtistCoodinator.start()
     }
+    
+    func goToViewShows(show: LibraryDisplay) {
+        let viewPodcastCoordinator = PodcastShowCoordinator(navigationController: navigationController, show: show)
+        viewPodcastCoordinator.start()
+    }
 }

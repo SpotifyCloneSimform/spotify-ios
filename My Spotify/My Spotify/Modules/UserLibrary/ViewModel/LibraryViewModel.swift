@@ -145,4 +145,24 @@ class LibraryViewModel {
         }
     }
     
+    // MARK: - Get user saved podcasts
+    func getUserPodcasts() {
+        APIManager.shared.call(type: .getUserPodcats) { [weak self] (result: Result<LibraryPodcast, CustomError>) in
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let libraryPodcast):
+                let data = libraryPodcast.items?.map { item in
+                    LibraryDisplay(name: item.show?.name, ownerDisplayName: item.show?.publisher, image: item.show?.images?.first?.url, type: .podcast, id: item.show?.id, description: item.show?.description ?? "")
+                }
+                self.libraryItems.value.removeAll()
+                self.libraryItems.value.append(LibraryDisplayData(index: 0, isFiltered: true, type: LibraryItemType.podcast, data: data ?? []))
+            case .failure(let error):
+                print()
+            }
+        }
+    }
+    
 }
