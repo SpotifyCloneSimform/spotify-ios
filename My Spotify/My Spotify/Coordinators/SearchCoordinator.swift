@@ -34,4 +34,16 @@ class SearchCoordinator: Coordinator {
         let coordinator = TrackOptionsCoordinator(navigationController: navigationController, trackId: trackId)
         coordinator.start()
     }
+    
+    func goToCategoryPlaylists(category: Category) {
+        let vc = CategoryPlaylistVC.instantiate(from: .search)
+        vc.searchCoordinator = self
+        vc.category = category
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func goToViewSongs(songData: LibraryDisplay) {
+        let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
+        viewPlaylistCoordinator.start()
+    }
 }

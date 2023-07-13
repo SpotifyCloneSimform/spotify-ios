@@ -15,7 +15,7 @@ class SearchVC: UIViewController, Storyboarded {
     // MARK: - Vars & Lets
     private let searchViewModel = SearchViewModel()
     var searchCoordinator: SearchCoordinator?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
@@ -66,6 +66,14 @@ extension SearchVC: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+extension SearchVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = searchViewModel.categories.value[indexPath.item]
+        searchCoordinator?.goToCategoryPlaylists(category: category)
+    }
 }
 
 extension SearchVC: UICollectionViewDelegateFlowLayout {
