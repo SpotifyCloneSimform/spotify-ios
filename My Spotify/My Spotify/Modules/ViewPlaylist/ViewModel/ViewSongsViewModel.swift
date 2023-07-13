@@ -5,7 +5,6 @@
 //  Created by Devarsh Bhalara on 07/07/23.
 //
 
-import Foundation
 class ViewSongsViewModel {
     
     // MARK: - Variables
@@ -15,6 +14,7 @@ class ViewSongsViewModel {
     var albumArtist = Dynamic<AlbumArtist?>(nil)
     var delegate: AdditionalInfoAlbum?
     
+    // MARK: - Get playlist songs
     func getPlaylistSong(id: String) {
         APIManager.shared.call(type: .getPlaylistSongs(id: id)) { [weak self] (result: Result<Song, CustomError>) in
             guard let self = self else{
@@ -30,11 +30,12 @@ class ViewSongsViewModel {
                 self.songs.value = DisplaySong(type: .playlist, data: songsData)
                 
             case .failure(let error):
-                print(error)
+                self.failure.value = error.body
             }
         }
     }
 
+    // MARK: - Get album songs
     func getAlbumSong(id: String) {
         APIManager.shared.call(type: .getAlbumTracks(id: id)) { [weak self] (result: Result<AlbumSong, CustomError>) in
             guard let self = self else{
@@ -51,11 +52,12 @@ class ViewSongsViewModel {
                 self.songs.value = DisplaySong(type: .album, data: songData)
                 
             case .failure(let error):
-                print(error)
+                self.failure.value = error.body
             }
         }
     }
     
+    // MARK: - Get followed artists
     func getArtist(id: String) {
         APIManager.shared.call(type: .getArtist(id: id)) { [weak self] (result: Result<AlbumArtist, CustomError>) in
             guard let self = self else{
@@ -65,7 +67,7 @@ class ViewSongsViewModel {
             case .success(let artist):
                 self.albumArtist.value = artist
             case .failure(let error):
-                print(error)
+                self.failure.value = error.body
             }
         }
     }

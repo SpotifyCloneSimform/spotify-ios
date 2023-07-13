@@ -48,6 +48,10 @@ class UserLibraryVC: UIViewController, Storyboarded {
                 sSelf.aiLoading.stopAnimating()
             }
         }
+        
+        viewModel.failure.bind { [weak self] message in
+            self?.showAlert(title: message)
+        }
     }
 }
 

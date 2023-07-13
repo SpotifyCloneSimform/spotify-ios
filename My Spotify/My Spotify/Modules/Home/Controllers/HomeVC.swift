@@ -44,6 +44,10 @@ class HomeVC: UIViewController, Storyboarded {
             self.tblHome.layoutIfNeeded()
             self.tblHome.reloadData()
         }
+        
+        viewModel.fail.bind { [weak self] message in
+            self?.showAlert(title: message)
+        }
     }
     
     @objc

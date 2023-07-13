@@ -5,7 +5,13 @@
 //  Created by Devarsh Bhalara on 06/07/23.
 //
 
-import Foundation
+struct LibraryDisplayData {
+    let index: Int
+    let isFiltered: Bool
+    let type: LibraryItemType
+    let data: [LibraryDisplay]
+}
+
 struct LibraryDisplay {
     let name: String?
     let ownerDisplayName: String?

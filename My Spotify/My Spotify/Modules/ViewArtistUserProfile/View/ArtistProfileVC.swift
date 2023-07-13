@@ -54,7 +54,6 @@ class ArtistProfileVC: UIViewController, Storyboarded {
                     self.lblArtistName.text = artist.name
                     self.lblArtistFollowers.text = "Followers \(artist.followers?.total ?? 0)"
                     self.imgArtist.kf.setImage(with: URL(string: artist.images?.first?.url ?? ""), placeholder: UIImage(named: "RoundProfile"))
-                    
                 }
             }
         }
@@ -84,6 +83,18 @@ class ArtistProfileVC: UIViewController, Storyboarded {
                     self.clvRelatedArtist.reloadData()
                 }
             }
+        }
+        
+        viewModel.failure.bind { [weak self] message in
+            self?.showAlert(title: message)
+        }
+        
+        viewModel.topTrackFailure.bind { [weak self] message in
+            self?.showAlert(title: message)
+        }
+        
+        viewModel.relatedArtistFailure.bind { [weak self] message in
+            self?.showAlert(title: message)
         }
     }
 

@@ -80,10 +80,14 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         }
         
         viewModel.albumArtist.bind { [weak self] albumArtist in
-            if let self = self, let imgUrl = albumArtist?.images?[0].url {
+            if let self = self, let imgUrl = albumArtist?.images?.first?.url {
                 self.imgArtist.kf.setImage(with: URL(string: imgUrl), placeholder: UIImage(named: "RoundProfile"))
                 self.lblArtistName.text = albumArtist?.name
             }
+        }
+        
+        viewModel.failure.bind { [weak self] message in
+            self?.showAlert(title: message)
         }
     }
 }

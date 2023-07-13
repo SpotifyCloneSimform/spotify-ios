@@ -5,15 +5,6 @@
 //  Created by Devarsh Bhalara on 06/07/23.
 //
 
-import Foundation
-
-struct LibraryDisplayData {
-    let index: Int
-    let isFiltered: Bool
-    let type: LibraryItemType
-    let data: [LibraryDisplay]
-}
-
 class LibraryViewModel {
   
     // MARK: - Variables
@@ -21,6 +12,7 @@ class LibraryViewModel {
     var failure = Dynamic<String>("")
     var libraryItems = Dynamic<[LibraryDisplayData]>([])
     
+    // MARK: - Get initial data
     func getAllLibraryData() {
         libraryItems.value.removeAll()
         APIManager.shared.call(type: .getUserPlaylists) { [weak self] (result: Result<LibraryPlaylist, CustomError>) in
@@ -160,7 +152,7 @@ class LibraryViewModel {
                 self.libraryItems.value.removeAll()
                 self.libraryItems.value.append(LibraryDisplayData(index: 0, isFiltered: true, type: LibraryItemType.podcast, data: data ?? []))
             case .failure(let error):
-                print()
+                self.failure.value = error.body
             }
         }
     }
