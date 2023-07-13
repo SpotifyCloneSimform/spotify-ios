@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import MotionToastView
 
 class ViewSongVC: UIViewController, Storyboarded {
     
@@ -96,8 +97,22 @@ class ViewSongVC: UIViewController, Storyboarded {
             }
         }
         
-        viewModel.reloadData.bind { 
-            self.btnLike.isSelected.toggle()
+        viewModel.reloadData.bind { [weak self] in
+
+            self?.btnLike.isSelected.toggle()
+            if let isLiked = self?.btnLike.isSelected {
+                let image = (UIImage(systemName: "checkmark") ?? UIImage(systemName: "trash"))?                   .withTintColor(.white).withRenderingMode(.alwaysOriginal)
+                
+                let msg = isLiked ? "Added to Liked Songs" : "Removed From Liked Songs"
+                self?.MotionToast_Customisation(header: "", message: msg,
+                                                headerColor: UIColor.blue,
+                                                messageColor: UIColor(red: 239.0, green: 239.0, blue: 239.0, alpha: 0.7),
+                                                primary_color: UIColor(named: "DarkGreen") ?? UIColor.blue,
+                                                secondary_color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0), icon_image: image!,
+                                                duration: .short, toastStyle: .style_vibrant,
+                                                toastGravity: .bottom, toastCornerRadius: 8, pulseEffect: false)
+            }
+            
         }
     }
     
@@ -116,22 +131,11 @@ class ViewSongVC: UIViewController, Storyboarded {
     }
     
     @IBAction func btnSkipNext(_ sender: UIButton) {
-        if let currentSong = currentSong, let totalSongs = songs?.data?.count {
-            if (currentSong + 1) < totalSongs {
-                let randomInt = Int.random(in: 0...totalSongs)
-                self.currentSong = btnSuffle.isSelected ? randomInt : currentSong + 1
-                setUpUI()
-            }
-        }
+        skipToNext()
     }
     
     @IBAction func btnSkipPrevious(_ sender: UIButton) {
-        if let currentSong = currentSong {
-            if (currentSong - 1) >= 0 {
-                self.currentSong = currentSong - 1
-                setUpUI()
-            }
-        }
+        skipToPrevious()
     }
     
     @IBAction func btnSuffle(_ sender: UIButton) {

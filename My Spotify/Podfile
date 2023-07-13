@@ -10,5 +10,6 @@ target 'My Spotify' do
   pod 'ReachabilitySwift'
   pod 'Kingfisher'
   pod 'SwiftKeychainWrapper'
+  pod 'MotionToastView'
   
 end
