@@ -52,7 +52,8 @@ class ArtistProfileVC: UIViewController, Storyboarded {
             if let self = self, let artist = artist {
                 DispatchQueue.main.async {
                     self.lblArtistName.text = artist.name
-                    self.lblArtistFollowers.text = "Followers \(artist.followers?.total ?? 0)"
+                    let followers = artist.followers?.total?.getFormattedNumber()
+                    self.lblArtistFollowers.text = "Followers \(followers ?? "N/A")"
                     self.imgArtist.kf.setImage(with: URL(string: artist.images?.first?.url ?? ""), placeholder: UIImage(named: "RoundProfile"))
                 }
             }
