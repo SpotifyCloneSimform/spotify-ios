@@ -152,22 +152,32 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="01U-hZ-OmK">
-                                                    <rect key="frame" x="80" y="13.333333333333332" width="74" height="37.333333333333343"/>
+                                                    <rect key="frame" x="80" y="13.333333333333332" width="245" height="37.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wct-HZ-Hsy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="20.333333333333332"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="NameNameNameNameNameNameNameNameName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wct-HZ-Hsy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="245" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desctiption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-Nl-lwm">
-                                                            <rect key="frame" x="0.0" y="20.333333333333329" width="74" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGZ-Nl-lwm">
+                                                            <rect key="frame" x="0.0" y="20.333333333333329" width="245" height="17"/>
+                                                            <string key="text">Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption Desctiption</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0U-xc-eMG">
+                                                    <rect key="frame" x="341" y="16" width="32" height="32"/>
+                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="Dot"/>
+                                                    <connections>
+                                                        <action selector="btnMoreClick:" destination="YM2-rf-t2e" eventType="touchUpInside" id="1NS-Nr-PqC"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="p4j-x1-ufv" firstAttribute="leading" secondItem="6BG-Mb-Ga7" secondAttribute="leading" constant="16" id="0eB-l4-jZK"/>
@@ -175,10 +185,13 @@
                                                 <constraint firstItem="p4j-x1-ufv" firstAttribute="top" secondItem="6BG-Mb-Ga7" secondAttribute="top" constant="8" id="Npe-4V-hGj"/>
                                                 <constraint firstItem="01U-hZ-OmK" firstAttribute="centerY" secondItem="p4j-x1-ufv" secondAttribute="centerY" id="eq4-Wg-A2D"/>
                                                 <constraint firstItem="01U-hZ-OmK" firstAttribute="leading" secondItem="p4j-x1-ufv" secondAttribute="trailing" constant="16" id="fOm-Wd-uoB"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="01U-hZ-OmK" secondAttribute="trailing" constant="16" id="sz1-rr-zJW"/>
+                                                <constraint firstItem="U0U-xc-eMG" firstAttribute="centerY" secondItem="6BG-Mb-Ga7" secondAttribute="centerY" id="fea-Kw-4dj"/>
+                                                <constraint firstAttribute="trailing" secondItem="U0U-xc-eMG" secondAttribute="trailing" constant="20" id="mcX-hC-MIy"/>
+                                                <constraint firstItem="U0U-xc-eMG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="01U-hZ-OmK" secondAttribute="trailing" constant="16" id="sz1-rr-zJW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnMore" destination="U0U-xc-eMG" id="RLz-gR-sKF"/>
                                             <outlet property="imgItem" destination="p4j-x1-ufv" id="7Pb-VY-jDQ"/>
                                             <outlet property="txtDescription" destination="zGZ-Nl-lwm" id="30b-z7-F0u"/>
                                             <outlet property="txtName" destination="wct-HZ-Hsy" id="TY7-tk-Zgz"/>
@@ -266,6 +279,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Dot" width="32" height="32"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="AccentColor">
             <color red="0.11500000208616257" green="0.84299999475479126" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

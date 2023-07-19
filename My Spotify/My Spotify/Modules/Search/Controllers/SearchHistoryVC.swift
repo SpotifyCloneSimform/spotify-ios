@@ -80,7 +80,12 @@ extension SearchHistoryVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchItemCell", for: indexPath) as? SearchItemCell else {
             return UITableViewCell()
         }
-        
+        cell.onClick = {
+            let searchItem = self.searchHistoryViewModel.searchItems.value[indexPath.row]
+            if (searchItem.type == .track) {
+                self.searchCoordinator?.showOptions(trackId: searchItem.id)
+            }
+        }
         cell.configCell(item: searchHistoryViewModel.searchItems.value[indexPath.row])
         return cell
     }
@@ -98,7 +103,7 @@ extension SearchHistoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let searchItem = searchHistoryViewModel.searchItems.value[indexPath.row]
         if (searchItem.type == .track) {
-            searchCoordinator?.showOptions(trackId: searchItem.id)
+            searchCoordinator?.goToViewSong(trackId: searchItem.id)
         }
     }
 }
