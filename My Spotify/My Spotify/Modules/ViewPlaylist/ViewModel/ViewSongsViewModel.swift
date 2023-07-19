@@ -47,7 +47,7 @@ class ViewSongsViewModel {
                 self.delegate?.getAdditionalInfo(footerDetails: DisplayAlbumFooterView(artistId: albumSongs.artists?[0].id ?? "", releaseDate: albumSongs.releaseDate ?? "", totalSongs: albumSongs.totalTracks ?? 0, copyRight: albumSongs.copyrights?.first?.text ?? ""))
                 let songData = albumSongs.tracks?.items?.filter { $0.name?.isEmpty == false }.map { item in
                     let artists = item.artists?.compactMap { $0.name }.joined(separator: ", ")
-                    return DisplaySongData(songName: item.name, artistsName: artists, image: albumSongs.images?.first?.url, id: item.id, title: "Playing From Album", subTitle: albumSongs.name)
+                    return DisplaySongData(songName: item.name, artistsName: artists, image: albumSongs.images?.first?.url, id: item.id, songDuration: item.durationMs ,title: "Playing From Album", subTitle: albumSongs.name)
                 }
                 self.songs.value = DisplaySong(type: .album, data: songData)
                 
