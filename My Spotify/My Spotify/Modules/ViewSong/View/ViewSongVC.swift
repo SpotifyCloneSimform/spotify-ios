@@ -27,7 +27,10 @@ class ViewSongVC: UIViewController, Storyboarded {
     var coordinator: ViewSongCoordinator?
     var songs: DisplaySong?
     var currentSong: Int?
+    var trackId: String?
     var viewModel = ViewSongViewModel()
+    var albumSongs: DisplaySong = DisplaySong(type: .album, data: [])
+    var currentTrack: Track?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,24 @@ class ViewSongVC: UIViewController, Storyboarded {
     }
     
     private func setUpUI() {
+        
+        if !(trackId?.isEmpty ?? true), let trackId = trackId {
+            viewModel.getTrack(trackId: trackId)
+        } else {
+            setDataToUI()
+        }
+        
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(skipToPrevious))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(skipToNext))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+    }
+    
+    private func setDataToUI() {
         if let songs = songs, let currentSong = currentSong, let imageUrl = songs.data?[currentSong].image {
             imgThumbnail.layer.cornerRadius = 20
             imgThumbnail.kf.setImage(with: URL(string: imageUrl))
@@ -58,14 +79,6 @@ class ViewSongVC: UIViewController, Storyboarded {
                 viewModel.checkLike(trackId: id)
             }
         }
-        
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(skipToPrevious))
-        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(skipToNext))
-        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
-        self.view.addGestureRecognizer(swipeLeft)
     }
     
     private func bindViewModel() {
@@ -76,6 +89,26 @@ class ViewSongVC: UIViewController, Storyboarded {
             DispatchQueue.main.async { [weak self] in
                 self?.btnLike.isSelected = isLiked
             }
+        }
+        
+        viewModel.track.bind { [weak self] track in
+            guard let self = self else {
+                return
+            }
+            if let albumId = track?.album?.id {
+                self.viewModel.getAlbumTracks(albumId: albumId)
+            }
+            self.currentTrack = track
+            self.setUpUI()
+        }
+        
+        viewModel.songs.bind { [weak self] songs in
+            guard let self = self else {
+                return
+            }
+            self.songs = songs
+            self.currentSong = songs?.data?.enumerated().first { $0.element.id  == self.trackId }?.offset ?? 0
+            self.setDataToUI()
         }
         
         viewModel.reloadData.bind { [weak self] in
@@ -106,7 +139,7 @@ class ViewSongVC: UIViewController, Storyboarded {
             if (currentSong + 1) < totalSongs {
                 let randomInt = Int.random(in: 0...totalSongs)
                 self.currentSong = btnSuffle.isSelected ? randomInt : currentSong + 1
-                setUpUI()
+                setDataToUI()
             }
         }
     }
@@ -115,8 +148,7 @@ class ViewSongVC: UIViewController, Storyboarded {
         if let currentSong = currentSong {
             if (currentSong - 1) >= 0 {
                 self.currentSong = currentSong - 1
-                setUpUI()
-            }
+                setDataToUI()            }
         }
     }
     

@@ -27,6 +27,7 @@ enum LibraryItemType: String {
     case artists
     case playlist
     case podcast
+    case track
 }
 
 extension LibraryItemType {
@@ -42,6 +43,8 @@ extension LibraryItemType {
             return 3
         case .all:
             return 5
+        case .track:
+            return 6
         }
     }
 }

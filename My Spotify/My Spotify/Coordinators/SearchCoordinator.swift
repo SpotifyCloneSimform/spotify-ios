@@ -46,4 +46,9 @@ class SearchCoordinator: Coordinator {
         let viewPlaylistCoordinator = ViewPlaylistCoordinator(navigationController: navigationController, songData: songData)
         viewPlaylistCoordinator.start()
     }
+    
+    func goToViewSong(trackId: String) {
+        let viewSongCoordinator = ViewSongCoordinator(navigationController: navigationController, trackId: trackId)
+        viewSongCoordinator.start()
+    }
 }
