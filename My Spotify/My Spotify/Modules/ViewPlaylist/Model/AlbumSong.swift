@@ -43,6 +43,7 @@ struct AlbumItems: Codable {
     let artists: [AlbumSongArtists]?
     let id: String?
     let name: String?
+    let durationMs: Int?
 }
 
 
