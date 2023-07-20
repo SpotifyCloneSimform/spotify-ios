@@ -119,4 +119,8 @@ extension UserProfileVC: UITableViewDelegate {
         let libraryDisplay = LibraryDisplay(name: playlist.name, ownerDisplayName: playlist.ownerName, image: playlist.image, type: .playlist, id: playlist.id)
         userProfileCoordinator?.goToViewSongs(songData: libraryDisplay)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        view.bounds.height / 8
+    }
 }

@@ -26,6 +26,11 @@
                             <constraint firstAttribute="width" secondItem="yka-cp-yrw" secondAttribute="height" multiplier="1:1" id="tf3-sh-lhH"/>
                         </constraints>
                         <imageReference key="image" image="music.note" catalog="system" symbolScale="small"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2e2-eb-JHi"/>
+                            </mask>
+                        </variation>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aGw-Bd-giO" userLabel="Details Container">
                         <rect key="frame" x="72" y="16" width="98.333333333333314" height="48"/>
