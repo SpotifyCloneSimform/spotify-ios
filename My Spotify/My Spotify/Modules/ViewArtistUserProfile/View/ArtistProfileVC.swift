@@ -47,6 +47,10 @@ class ArtistProfileVC: UIViewController, Storyboarded {
         }
     }
     
+    @IBAction func btnPlayClick(_ sender: UIButton) {
+        coordinator?.goToViewSong(currentSong: 0)
+    }
+    
     private func bindViewModel() {
         viewModel.artist.bind { [weak self] artist in
             if let self = self, let artist = artist {

@@ -193,7 +193,11 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z33-Eg-4IK">
-                            <rect key="frame" x="152.66666666666666" y="304" width="88" height="78"/>
+                            <rect key="frame" x="166.66666666666666" y="304" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="4Kd-Sh-tBk"/>
+                                <constraint firstAttribute="width" constant="60" id="ckJ-sQ-y33"/>
+                            </constraints>
                             <color key="tintColor" name="AccentColor"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Button">
@@ -204,6 +208,9 @@
                                 <imageReference key="image" image="PlayButton" symbolScale="default"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="btnPlayClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C1g-qu-ZLv"/>
+                            </connections>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="3ss-sf-J76"/>

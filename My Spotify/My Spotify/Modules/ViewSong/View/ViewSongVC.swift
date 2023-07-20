@@ -38,14 +38,16 @@ class ViewSongVC: UIViewController, Storyboarded {
         bindViewModel()
     }
     
+    override open var shouldAutorotate: Bool {
+          return false
+    }
+    
     private func setUpUI() {
-        
         if !(trackId?.isEmpty ?? true), let trackId = trackId {
             viewModel.getTrack(trackId: trackId)
         } else {
             setDataToUI()
         }
-        
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(skipToPrevious))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
@@ -99,7 +101,6 @@ class ViewSongVC: UIViewController, Storyboarded {
                 self.viewModel.getAlbumTracks(albumId: albumId)
             }
             self.currentTrack = track
-            self.setUpUI()
         }
         
         viewModel.songs.bind { [weak self] songs in
