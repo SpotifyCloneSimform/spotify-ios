@@ -49,6 +49,10 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
         bindViewModel()
     }
     
+    @IBAction func btnPlayClick(_ sender: UIButton) {
+        coordinator?.goToViewSong(currentSong: 0)
+    }
+    
     private func setUpUI() {
         aiLoading.startAnimating()
         imgArtist.layer.cornerRadius = imgArtist.bounds.width / 2
@@ -66,6 +70,8 @@ class ViewPlaylistVC: UIViewController, Storyboarded, AdditionalInfoAlbum {
                 viewModel.getAlbumSong(id: songData.id ?? "")
             }
         }
+        
+        
     }
     
     private func bindViewModel() {
